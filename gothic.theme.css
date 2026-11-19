@@ -1,0 +1,834 @@
+.atlas-statblock,
+.atlas-sb-pane-card,
+.atlas-sb-sheet {
+  --text-normal: #f1eff0 !important;
+  --text-muted: #a1999c !important;
+  --text-faint: #6e6568 !important;
+
+  --text-accent: #b8324f !important;
+  --text-accent-hover: #d46a7e !important;
+  --link-color: #b8324f !important;
+  --link-color-hover: #d46a7e !important;
+  --link-external-color: #b8324f !important;
+  --link-external-color-hover: #d46a7e !important;
+
+  --sb-goth-bg: #0e0a0b;
+  --sb-goth-card: #171113;
+  --sb-goth-elevated: #21171a;
+  --sb-goth-crimson: #7f1d32;
+  --sb-goth-crimson-bright: #b8324f;
+  --sb-goth-iron: #3d0e1a;
+  --sb-goth-border: #30161e;
+
+  /* Layer 1: Opaque, slightly richer dark-oxblood thorny vines layered over the wallpaper */
+/* Layer 1: Goldilocks opaque oxblood vines (balanced contrast over wallpaper) */
+  --sb-goth-vines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 720' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23330b15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M-15,35 C55,65 95,125 145,185 C195,245 255,265 325,310 C375,342 415,395 445,455' stroke-width='2.4'/%3E%3Cpath d='M95,125 C140,105 195,112 245,88 C280,72 308,42 335,18' stroke-width='1.8'/%3E%3Cpath d='M165,205 C135,255 128,315 95,365 C72,400 35,425 8,455' stroke-width='1.75'/%3E%3Cpath d='M245,88 C272,115 298,122 318,108 C332,98 328,82 316,84 C306,86 308,98 318,98' stroke-width='1.35'/%3E%3Cpath d='M145,185 C168,172 186,154 182,140 C178,128 164,132 168,142' stroke-width='1.25'/%3E%3Cpath d='M515,685 C445,645 395,585 340,525 C285,465 220,445 155,395 C105,356 68,302 42,245' stroke-width='2.4'/%3E%3Cpath d='M395,585 C345,608 288,602 238,628 C202,646 172,678 145,705' stroke-width='1.8'/%3E%3Cpath d='M320,505 C352,455 362,395 395,345 C418,310 455,282 485,252' stroke-width='1.75'/%3E%3Cpath d='M238,628 C210,602 184,595 164,610 C150,620 154,636 166,634 C176,632 174,620 164,620' stroke-width='1.35'/%3E%3Cpath d='M340,525 C318,538 300,556 304,570 C308,582 322,578 318,568' stroke-width='1.25'/%3E%3C/g%3E%3Cg fill='%233b0d19'%3E%3Cpath d='M38,62 L27,52 L44,55 Z'/%3E%3Cpath d='M76,102 L88,92 L83,109 Z'/%3E%3Cpath d='M122,158 L109,165 L127,167 Z'/%3E%3Cpath d='M188,224 L199,212 L195,230 Z'/%3E%3Cpath d='M242,262 L232,274 L249,269 Z'/%3E%3Cpath d='M298,294 L309,282 L305,300 Z'/%3E%3Cpath d='M358,338 L347,349 L364,345 Z'/%3E%3Cpath d='M408,392 L420,382 L414,399 Z'/%3E%3Cpath d='M148,110 L143,97 L156,107 Z'/%3E%3Cpath d='M212,102 L219,114 L205,106 Z'/%3E%3Cpath d='M282,66 L272,56 L288,60 Z'/%3E%3Cpath d='M138,268 L125,263 L135,276 Z'/%3E%3Cpath d='M112,334 L124,339 L108,342 Z'/%3E%3Cpath d='M462,652 L473,662 L456,659 Z'/%3E%3Cpath d='M418,608 L406,618 L411,601 Z'/%3E%3Cpath d='M368,552 L381,545 L363,543 Z'/%3E%3Cpath d='M302,486 L291,498 L295,480 Z'/%3E%3Cpath d='M245,446 L255,434 L238,439 Z'/%3E%3Cpath d='M185,414 L174,426 L178,408 Z'/%3E%3Cpath d='M122,366 L133,355 L116,359 Z'/%3E%3Cpath d='M72,306 L60,316 L66,299 Z'/%3E%3Cpath d='M342,602 L347,615 L334,605 Z'/%3E%3Cpath d='M275,612 L268,600 L282,608 Z'/%3E%3Cpath d='M202,652 L212,662 L196,658 Z'/%3E%3Cpath d='M358,435 L371,440 L361,427 Z'/%3E%3Cpath d='M382,372 L370,367 L386,364 Z'/%3E%3Cpath d='M196,94 C204,84 216,84 220,90 C212,95 204,96 196,94 Z' fill='%232c0913'/%3E%3Cpath d='M124,296 C114,292 108,282 112,276 C118,282 122,288 124,296 Z' fill='%232c0913'/%3E%3Cpath d='M302,616 C294,626 282,626 278,620 C286,615 294,614 302,616 Z' fill='%232c0913'/%3E%3Cpath d='M372,406 C382,410 388,420 384,426 C378,420 374,414 372,406 Z' fill='%232c0913'/%3E%3C/g%3E%3C/svg%3E");  /* Layer 2: Staggered heraldic fleur-de-lis wallpaper tile */
+  --sb-goth-fleur: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='136' height='156' viewBox='0 0 136 156'%3E%3Cdefs%3E%3Cg id='fdl'%3E%3Cpath d='M0,-18 C2.8,-12 4.5,-6 2.2,1.5 L-2.2,1.5 C-4.5,-6 -2.8,-12 0,-18 Z'/%3E%3Cpath d='M-2.2,1.5 C-5.5,-5.5 -13,-8.5 -15.5,-3 C-17.5,1.5 -13.5,6.5 -9,5 C-11.5,3.5 -12,0.5 -10,-1 C-8,-2.5 -4.8,-0.5 -3.2,2.5 Z'/%3E%3Cpath d='M2.2,1.5 C5.5,-5.5 13,-8.5 15.5,-3 C17.5,1.5 13.5,6.5 9,5 C11.5,3.5 12,0.5 10,-1 C8,-2.5 4.8,-0.5 3.2,2.5 Z'/%3E%3Crect x='-7.5' y='2.2' width='15' height='2.2' rx='1'/%3E%3Cpath d='M-1.6,4.8 L1.6,4.8 L2.8,13.5 L0,16.5 L-2.8,13.5 Z'/%3E%3Cpath d='M-3.4,4.8 C-4.5,8.5 -7.5,11 -10.5,12.2 C-7.5,12.8 -4.5,11.2 -2.6,7.5 Z'/%3E%3Cpath d='M3.4,4.8 C4.5,8.5 7.5,11 10.5,12.2 C7.5,12.8 4.5,11.2 2.6,7.5 Z'/%3E%3C/g%3E%3C/defs%3E%3Cg fill='%2399263f' fill-opacity='0.13'%3E%3Cuse href='%23fdl' x='68' y='39'/%3E%3Cuse href='%23fdl' x='0' y='117'/%3E%3Cuse href='%23fdl' x='136' y='117'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-color: var(--sb-goth-bg) !important;
+  background-image: 
+    var(--sb-goth-vines),
+    radial-gradient(ellipse 88% 78% at 50% 48%, rgba(14, 10, 11, 0.22) 0%, rgba(10, 7, 8, 0.05) 100%),
+    radial-gradient(circle at 50% 0%, rgba(127, 29, 50, 0.16), transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(127, 29, 50, 0.11), transparent 55%),
+    var(--sb-goth-fleur),
+    linear-gradient(180deg, #150e10 0%, #0a0708 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: center, center, top center, bottom center, top center, center !important;
+  background-size: cover, 100% 100%, 100% 100%, 100% 100%, 136px 156px, 100% 100% !important;
+
+  color: var(--text-normal) !important;
+  border-radius: 4px !important;
+  padding: 18px 20px !important;
+
+  position: relative !important;
+  overflow: visible !important;
+
+  border: 2px solid var(--sb-goth-iron) !important;
+  box-shadow: 
+    inset 0 0 18px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 1px rgba(184, 50, 79, 0.08),
+    0 14px 35px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Fix duplicate border/background when Atlas nests .atlas-sb-sheet or .atlas-sb-pane-card inside .atlas-statblock */
+:is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) :is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::before,
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Cathedral Iron Corner Flourishes */
+.atlas-statblock::before,
+.atlas-sb-pane-card::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M8,70 L8,20 C8,13 13,8 20,8 L70,8' fill='none' stroke='%233d0e1a' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M8,8 Q35,8 25,35 Q8,35 8,8 Z' fill='%237f1d32' stroke='%2322080e' stroke-width='1.5'/%3E%3Cpath d='M22,22 L45,45 M22,35 L35,22' fill='none' stroke='%23b8324f' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23b8324f'/%3E%3Cpolygon points='70,6 74,8 70,10 68,8' fill='%23b8324f'/%3E%3Cpolygon points='6,70 8,74 10,70 8,68' fill='%23b8324f'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 0 6px rgba(184, 50, 79, 0.4));
+}
+
+.atlas-statblock::after,
+.atlas-sb-pane-card::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M8,70 L8,20 C8,13 13,8 20,8 L70,8' fill='none' stroke='%233d0e1a' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M8,8 Q35,8 25,35 Q8,35 8,8 Z' fill='%237f1d32' stroke='%2322080e' stroke-width='1.5'/%3E%3Cpath d='M22,22 L45,45 M22,35 L35,22' fill='none' stroke='%23b8324f' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='4' fill='%23b8324f'/%3E%3Cpolygon points='70,6 74,8 70,10 68,8' fill='%23b8324f'/%3E%3Cpolygon points='6,70 8,74 10,70 8,68' fill='%23b8324f'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 0 6px rgba(184, 50, 79, 0.4));
+}
+
+/* Typography & Links */
+.atlas-statblock, .atlas-statblock *,
+.atlas-sb-pane-card, .atlas-sb-pane-card * {
+  color: var(--text-normal);
+}
+
+.atlas-statblock .atlas-sb-muted,
+.atlas-statblock [data-dim="true"],
+.atlas-statblock .atlas-sb-run-in-label,
+.atlas-sb-pane-card .atlas-sb-muted,
+.atlas-sb-pane-card .atlas-sb-run-in-label {
+  color: var(--text-muted) !important;
+}
+
+.atlas-statblock a,
+.atlas-statblock a.internal-link,
+.atlas-statblock [data-link],
+.atlas-statblock [data-clickable="true"],
+.atlas-sb-pane-card a,
+.atlas-sb-pane-card a.internal-link,
+.atlas-sb-pane-card [data-link],
+.atlas-sb-pane-card [data-clickable="true"] {
+  color: var(--sb-goth-crimson-bright) !important;
+  font-weight: 600;
+}
+
+.atlas-statblock a:hover,
+.atlas-sb-pane-card a:hover {
+  color: var(--text-accent-hover) !important;
+  text-shadow: 0 0 8px rgba(184, 50, 79, 0.55) !important;
+}
+
+/* Headings & Dividers */
+.atlas-statblock .atlas-sb-heading,
+.atlas-statblock .atlas-sb-section-heading,
+.atlas-sb-pane-card .atlas-sb-heading,
+.atlas-sb-pane-card .atlas-sb-section-heading {
+  font-family: "Cinzel", "Georgia", serif !important;
+  color: var(--sb-goth-crimson-bright) !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid var(--sb-goth-iron) !important;
+  box-shadow: 0 1px 0 rgba(184, 50, 79, 0.16) !important;
+  padding-bottom: 3px !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.atlas-statblock hr,
+.atlas-statblock [data-block="divider"],
+.atlas-sb-pane-card [data-block="divider"] {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent 0%, var(--sb-goth-iron) 20%, var(--sb-goth-crimson-bright) 50%, var(--sb-goth-iron) 80%, transparent 100%) !important;
+  margin: 12px 0 !important;
+  opacity: 0.85 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock hr::after,
+.atlas-statblock [data-block="divider"]::after,
+.atlas-sb-pane-card [data-block="divider"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 14px !important;
+  height: 10px !important;
+  transform: translate(-50%, -50%) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 12'%3E%3Cpolygon points='9,1 12.5,6 9,11 5.5,6' fill='%23b8324f' stroke='%230e0a0b' stroke-width='0.8'/%3E%3Cpolygon points='4,6 1,4.5 2.5,6 1,7.5' fill='%237f1d32'/%3E%3Cpolygon points='14,6 17,4.5 15.5,6 17,7.5' fill='%237f1d32'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(184, 50, 79, 0.5)) !important;
+  pointer-events: none !important;
+}
+
+/* Metric Boxes */
+.atlas-statblock [data-block="metric"],
+.atlas-sb-pane-card [data-block="metric"] {
+  background: linear-gradient(180deg, rgba(33, 23, 26, 0.94) 0%, rgba(23, 17, 19, 0.9) 100%) !important;
+  border: 1px solid var(--sb-goth-border) !important;
+  border-top: 2px solid var(--sb-goth-crimson-bright) !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+  box-shadow: inset 0 1px 0 rgba(212, 106, 126, 0.08) !important;
+}
+
+/* Ability Scores & Currency Tables */
+.atlas-statblock [data-block="scores"],
+.atlas-sb-pane-card [data-block="scores"] {
+  --table-header-background: transparent !important;
+  --table-header-background-hover: transparent !important;
+  --table-row-background-even: transparent !important;
+  --table-row-background-odd: transparent !important;
+  --table-background: transparent !important;
+  --table-border-color: transparent !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"],
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] {
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] table,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] table {
+  border-collapse: separate !important;
+  border-spacing: 4px !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] th,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
+  background: rgba(33, 23, 26, 0.92) !important;
+  color: var(--sb-goth-crimson-bright) !important;
+  border: 1px solid var(--sb-goth-border) !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] td,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
+  background: rgba(23, 17, 19, 0.88) !important;
+  color: var(--text-normal) !important;
+  border: 1px solid var(--sb-goth-border) !important;
+  border-radius: 4px !important;
+  padding: 5px 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block="scores"] tr,
+.atlas-sb-pane-card [data-block="scores"] tr {
+  background: transparent !important;
+}
+
+/* Tabs */
+.atlas-statblock [role="tablist"],
+.atlas-sb-pane-card [role="tablist"] {
+  background: rgba(23, 17, 19, 0.9) !important;
+  border: 1px solid var(--sb-goth-border) !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+  gap: 2px !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+
+.atlas-statblock [role="tab"],
+.atlas-sb-pane-card [role="tab"] {
+  border-radius: 3px !important;
+  color: var(--text-muted) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  padding: 3px 6px !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [role="tab"][aria-selected="true"],
+.atlas-sb-pane-card [role="tab"][aria-selected="true"] {
+  background: var(--sb-goth-crimson) !important;
+  color: #fff !important;
+  box-shadow: 0 0 8px rgba(184, 50, 79, 0.35) !important;
+}
+
+/* Counter Pips (Oxblood Rubies) */
+.atlas-statblock [data-block="counters"] svg,
+.atlas-sb-pane-card [data-block="counters"] svg,
+.atlas-statblock [data-pip] svg,
+.atlas-sb-pane-card [data-pip] svg {
+  fill: var(--sb-goth-crimson-bright) !important;
+  stroke: var(--sb-goth-crimson) !important;
+  color: var(--sb-goth-crimson-bright) !important;
+  filter: drop-shadow(0 0 3px rgba(184, 50, 79, 0.45)) !important;
+}
+
+.atlas-statblock [data-block="counters"] [data-used="true"] svg,
+.atlas-sb-pane-card [data-block="counters"] [data-used="true"] svg,
+.atlas-statblock [data-pip][data-empty="true"] svg,
+.atlas-sb-pane-card [data-pip][data-empty="true"] svg {
+  fill: transparent !important;
+  stroke: var(--sb-goth-iron) !important;
+  opacity: 0.4 !important;
+  filter: none !important;
+}
+
+/* Skills & Roll Buttons */
+.atlas-statblock [data-block-id="c5skgrp0"] [data-block="row"],
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] [data-block="row"] {
+  border-bottom: 1px dashed rgba(61, 14, 26, 0.55) !important;
+  padding: 1px 4px !important;
+}
+
+.atlas-statblock [data-block-id^="c5sk"][data-block-id$="p0"],
+.atlas-sb-pane-card [data-block-id^="c5sk"][data-block-id$="p0"] {
+  color: var(--sb-goth-crimson-bright) !important;
+}
+
+.atlas-statblock button[class*="roll"],
+.atlas-statblock [data-roll],
+.atlas-sb-pane-card button[class*="roll"],
+.atlas-sb-pane-card [data-roll] {
+  background: rgba(127, 29, 50, 0.22) !important;
+  color: var(--sb-goth-crimson-bright) !important;
+  border: 1px solid rgba(184, 50, 79, 0.4) !important;
+  border-radius: 3px !important;
+  padding: 0 4px !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock button[class*="roll"]:hover,
+.atlas-statblock [data-roll]:hover,
+.atlas-sb-pane-card button[class*="roll"]:hover,
+.atlas-sb-pane-card [data-roll]:hover {
+  background: var(--sb-goth-crimson-bright) !important;
+  color: #fff !important;
+  box-shadow: 0 0 8px rgba(184, 50, 79, 0.5) !important;
+}
+
+/* Proficiency Toggle Switch */
+.atlas-statblock [data-block-id="c5pb0000"],
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container,
+.atlas-sb-pane-card [data-block-id="c5pb0000"],
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container {
+  --interactive-accent: #b8324f !important;
+  --interactive-accent-hover: #d46a7e !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked) {
+  background-color: #b8324f !important;
+  background: #b8324f !important;
+  border-color: #d46a7e !important;
+  box-shadow: 0 0 8px rgba(184, 50, 79, 0.45) !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before {
+  background-color: #b8324f !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
+  background-color: #0e0a0b !important;
+  border: 1px solid #3d0e1a !important;
+}
+
+/* ==========================================================================
+   SCENE TOKEN PREVIEW WINDOW FIX
+   ========================================================================== */
+
+.atlas-statblock-preview-window,
+.atlas-statblock-preview-window .atlas-statblock-body,
+.atlas-vtt-plugin .atlas-statblock-link__preview,
+.atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
+  background-color: var(--sb-goth-bg) !important;
+  background-image: 
+    var(--sb-goth-vines),
+    radial-gradient(ellipse 88% 78% at 50% 48%, rgba(14, 10, 11, 0.22) 0%, rgba(10, 7, 8, 0.05) 100%),
+    radial-gradient(circle at 50% 0%, rgba(127, 29, 50, 0.16), transparent 60%),
+    var(--sb-goth-fleur),
+    linear-gradient(180deg, #150e10 0%, #0a0708 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: center, center, top center, top center, center !important;
+  background-size: cover, 100% 100%, 100% 100%, 136px 156px, 100% 100% !important;
+  color: var(--text-normal) !important;
+  --text-normal: #f1eff0 !important;
+  --text-muted: #a1999c !important;
+  --text-faint: #6e6568 !important;
+}
+
+.atlas-statblock-preview-window {
+  border: 2px solid var(--sb-goth-iron) !important;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 0, 0, 0.8),
+    0 16px 36px rgba(0, 0, 0, 0.95) !important;
+  border-radius: 4px !important;
+  overflow: visible !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: BLOODBOUND GOTHIC INPUT, DROPDOWN & ENTRY EDITOR THEME
+   ========================================================================== */
+
+/* 1. Dropdown Popup Box & Options */
+.atlas-vtt-plugin .atlas-sb-pane-options {
+    background: var(--sb-goth-elevated) !important;
+    border: 1px solid var(--sb-goth-iron) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option {
+    color: var(--text-normal) !important;
+    background: transparent !important;
+    padding: 4px 8px !important;
+    border-radius: 3px !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option.is-selected {
+    background-color: var(--sb-goth-crimson) !important;
+    color: #ffffff !important;
+}
+
+/* 2. Text/Number Inputs, Controls & Contenteditable Fields */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input,
+.atlas-vtt-plugin .atlas-sb-pane-input,
+.atlas-statblock input[type="text"],
+.atlas-statblock input[type="number"],
+.atlas-statblock textarea,
+.atlas-sb-pane-card input[type="text"],
+.atlas-sb-pane-card input[type="number"],
+.atlas-sb-pane-card textarea,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"],
+.atlas-statblock [contenteditable="true"],
+.atlas-sb-pane-card [contenteditable="true"] {
+    background-color: var(--sb-goth-card) !important;
+    background: var(--sb-goth-card) !important;
+    color: var(--text-normal) !important;
+    border: 1px solid var(--sb-goth-border) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+/* Freeform note box ("Sap", weapon notes) */
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"] {
+    padding: 4px 8px !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Focus State */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text:focus,
+.atlas-vtt-plugin [contenteditable="plaintext-only"]:focus,
+.atlas-statblock input:focus,
+.atlas-statblock textarea:focus,
+.atlas-sb-pane-card input:focus,
+.atlas-sb-pane-card textarea:focus {
+    background-color: var(--sb-goth-elevated) !important;
+    background: var(--sb-goth-elevated) !important;
+    color: #ffffff !important;
+    border-color: var(--sb-goth-crimson-bright) !important;
+    outline: 2px solid var(--sb-goth-crimson-bright) !important;
+    outline-offset: 1px !important;
+}
+
+/* 4. Extra Labels, Add Entry Buttons & Placeholders */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-entry-extra-label {
+    color: var(--sb-goth-crimson-bright) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon {
+    color: var(--sb-goth-crimson-bright) !important;
+    background: transparent !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry:hover,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon:hover {
+    color: #ffffff !important;
+    background-color: rgba(184, 50, 79, 0.2) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-entry__text[data-placeholder]:empty:before,
+.atlas-vtt-plugin .atlas-sb-pane-input::placeholder,
+.atlas-statblock input::placeholder,
+.atlas-statblock textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.65 !important;
+}
+
+/* 5. Suppress Browser Autofill Blue Tint */
+.atlas-vtt-plugin input:-webkit-autofill,
+.atlas-vtt-plugin input:-webkit-autofill:hover, 
+.atlas-vtt-plugin input:-webkit-autofill:focus,
+.atlas-statblock input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-normal) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--sb-goth-card) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* ==========================================================================
+   RESET COUNTER BUTTON: HOLLOW INTERIOR & OXBLOOD STROKE
+   ========================================================================== */
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset,
+.atlas-statblock button.atlas-sb-counter__reset,
+.atlas-sb-pane-card button.atlas-sb-counter__reset {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg {
+  fill: transparent !important;
+  stroke: var(--sb-goth-crimson-bright, #b8324f) !important;
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+  filter: drop-shadow(0 0 3px rgba(184, 50, 79, 0.45)) !important;
+  transition: transform 0.15s ease, stroke 0.15s ease, filter 0.15s ease !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline) {
+  fill: transparent !important;
+  stroke: var(--sb-goth-crimson-bright, #b8324f) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset:hover svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg,
+.atlas-statblock button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline) {
+  stroke: var(--text-accent-hover, #d46a7e) !important;
+  filter: drop-shadow(0 0 8px rgba(184, 50, 79, 0.65)) !important;
+  transform: rotate(-30deg) !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (BLOODBOUND GOTHIC)
+   ========================================================================== */
+.atlas-ctx-menu,
+.atlas-ctx-menu--dropdown,
+.atlas-vtt-plugin .atlas-sb-pane-options,
+.atlas-sb-pane-options {
+  background: #21171a !important;
+  border: 1.5px solid #3d0e1a !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85) !important;
+  color: #f1eff0 !important;
+  padding: 4px !important;
+}
+
+.atlas-ctx-item,
+.atlas-vtt-plugin .atlas-sb-pane-option,
+.atlas-sb-pane-option {
+  color: #f1eff0 !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+  padding: 4px 8px !important;
+  transition: background-color 100ms ease, color 100ms ease !important;
+}
+
+.atlas-ctx-item:hover,
+.atlas-ctx-item:focus,
+.atlas-ctx-item[data-highlighted],
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-sb-pane-option:hover,
+.atlas-sb-pane-option:focus {
+  background-color: #7f1d32 !important;
+  color: #ffffff !important;
+  outline: none !important;
+}
+
+.atlas-ctx-item[data-state="checked"],
+.atlas-ctx-item[aria-checked="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-sb-pane-option[aria-selected="true"] {
+  background-color: #7f1d32 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.atlas-ctx-item__check svg {
+  stroke: #b8324f !important;
+}
+
+.atlas-ctx-separator {
+  background: #30161e !important;
+  height: 1px !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: BLOODBOUND GOTHIC LINK HOVER POPOVERS & NATIVE SHEET TABLES
+   ========================================================================== */
+
+.popover.hover-popover {
+  background-color: var(--sb-goth-bg, #0e0a0b) !important;
+  background-image: 
+    var(--sb-goth-vines),
+    radial-gradient(ellipse 88% 78% at 50% 48%, rgba(14, 10, 11, 0.22) 0%, rgba(10, 7, 8, 0.05) 100%),
+    radial-gradient(circle at 50% 0%, rgba(127, 29, 50, 0.16), transparent 60%),
+    var(--sb-goth-fleur),
+    linear-gradient(180deg, #150e10 0%, #0a0708 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: center, center, top center, top center, center !important;
+  background-size: cover, 100% 100%, 100% 100%, 136px 156px, 100% 100% !important;
+  border: 1.5px solid var(--sb-goth-iron, #3d0e1a) !important;
+  border-radius: 4px !important;
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.8),
+    0 12px 30px rgba(0, 0, 0, 0.9) !important;
+  color: var(--text-normal, #f1eff0) !important;
+  position: absolute !important;
+  overflow: visible !important;
+}
+
+.popover.hover-popover .markdown-preview-view,
+.popover.hover-popover .markdown-embed,
+.popover.hover-popover .markdown-embed-content {
+  background: transparent !important;
+  color: var(--text-normal, #f1eff0) !important;
+}
+
+.popover.hover-popover :is(h1, h2, h3, h4, h5, h6, strong, b) {
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+}
+
+.popover.hover-popover a.internal-link {
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+}
+
+.popover.hover-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: -8px !important;
+  width: 44px !important;
+  height: 44px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M8,70 L8,20 C8,13 13,8 20,8 L70,8' fill='none' stroke='%233d0e1a' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M8,8 Q35,8 25,35 Q8,35 8,8 Z' fill='%237f1d32' stroke='%2322080e' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='8' r='3.5' fill='%23b8324f'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(184, 50, 79, 0.4)) !important;
+}
+
+.popover.hover-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -8px !important;
+  right: -8px !important;
+  width: 44px !important;
+  height: 44px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: rotate(180deg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M8,70 L8,20 C8,13 13,8 20,8 L70,8' fill='none' stroke='%233d0e1a' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M8,8 Q35,8 25,35 Q8,35 8,8 Z' fill='%237f1d32' stroke='%2322080e' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='8' r='3.5' fill='%23b8324f'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(184, 50, 79, 0.4)) !important;
+}
+
+/* Native Atlas Sheet Tables */
+.atlas-statblock .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
+  background-color: rgba(33, 23, 26, 0.92) !important;
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+  border-color: var(--sb-goth-border, #30161e) !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
+  background-color: rgba(23, 17, 19, 0.88) !important;
+  color: var(--text-normal, #f1eff0) !important;
+  border-color: var(--sb-goth-border, #30161e) !important;
+}
+
+.atlas-sb-sheet-table__handle svg {
+  stroke: var(--sb-goth-crimson-bright, #b8324f) !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: ACTION-USE PIPS & OPEN ABILITY SCORES (BLOODBOUND GOTHIC)
+   ========================================================================== */
+
+/* --- 1. Action-Use Pips (.action-use Checkboxes) --- */
+.atlas-statblock input[type="checkbox"].action-use,
+.atlas-sb-pane-card input[type="checkbox"].action-use,
+.atlas-sb-sheet input[type="checkbox"].action-use {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  margin: 0 2px !important;
+  background-color: var(--sb-goth-card, #171113) !important;
+  border: 1.5px solid var(--sb-goth-iron, #3d0e1a) !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:checked,
+.atlas-sb-pane-card input[type="checkbox"].action-use:checked,
+.atlas-sb-sheet input[type="checkbox"].action-use:checked {
+  background-color: var(--sb-goth-crimson-bright, #b8324f) !important;
+  border-color: #d46a7e !important;
+  box-shadow: 0 0 6px rgba(184, 50, 79, 0.45) !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:after,
+.atlas-sb-pane-card input[type="checkbox"].action-use:after,
+.atlas-sb-sheet input[type="checkbox"].action-use:after {
+  display: none !important;
+}
+
+/* --- 2. Open Ability Scores (Transposed Headers & Clean Rows) --- */
+.atlas-statblock [data-block-id="c5stats0"] table,
+.atlas-sb-pane-card [data-block-id="c5stats0"] table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+  margin: 8px 0 12px 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] :is(th, td) {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 4px 2px !important;
+  text-align: center !important;
+}
+
+/* Ability Headers (STR, DEX, etc.) */
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td) {
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+  font-family: "Cinzel", "Modesto Condensed", "Georgia", serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid var(--sb-goth-iron, #3d0e1a) !important;
+  padding-bottom: 4px !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] thead tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead tr > :first-child {
+  border-bottom: 2px solid transparent !important;
+  visibility: hidden !important;
+}
+
+/* Side Labels (SCORE, MOD, SAVE) */
+.atlas-statblock [data-block-id="c5stats0"] tbody :is(th, td:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody :is(th, td:first-child) {
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-muted, #a1999c) !important;
+  text-align: right !important;
+  padding-right: 8px !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before {
+  content: "Score" !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child *,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Base Scores */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child) {
+  color: var(--text-faint, #6e6568) !important;
+  font-size: 0.82rem !important;
+  padding-top: 6px !important;
+}
+
+/* Mod & Save Roll Links */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child) {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link {
+  color: var(--sb-goth-crimson-bright, #b8324f) !important;
+  font-weight: 700 !important;
+  border-bottom: 1.5px solid rgba(184, 50, 79, 0.45) !important;
+  padding: 0 1px !important;
+  display: inline-block !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link:hover,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link:hover {
+  color: var(--text-accent-hover, #d46a7e) !important;
+  border-bottom-color: var(--text-accent-hover, #d46a7e) !important;
+  text-shadow: 0 0 8px rgba(184, 50, 79, 0.55) !important;
+}

@@ -1,0 +1,937 @@
+/* ==========================================================================
+   STYLE: GLACIAL RIME & PRISMATIC FROST (CRYSTALLINE ICE)
+   File: ice.css
+   ========================================================================== */
+
+/* --- 1. Root Shell, Theme Overrides & Faceted Glacial Frame --- */
+.atlas-statblock,
+.atlas-sb-pane-card,
+.atlas-sb-sheet {
+  /* Ice Palette Variables */
+  --frost-bg-deep: #050f17;
+  --frost-bg-elevated: #0c1d29;
+  --frost-bg-focus: #142a3a;
+  --frost-border-rim: #164e63;
+  --frost-border-cyan: #38bdf8;
+  --frost-border-bright: #7dd3fc;
+  --frost-border-white: #e0f2fe;
+  --frost-glow: rgba(56, 189, 248, 0.4);
+  --frost-bright-glow: rgba(125, 211, 252, 0.25);
+
+  /* Typography Colors */
+  --frost-text-main: #f0fdfa;
+  --frost-text-muted: #99f6e4;
+  --frost-text-faint: #5eead4;
+  --frost-heading: #7dd3fc;
+  --frost-accent-cyan: #38bdf8;
+
+  /* Force Ice Palette Over Obsidian Themes */
+  --text-normal: var(--frost-text-main) !important;
+  --text-muted: var(--frost-text-muted) !important;
+  --text-faint: var(--frost-text-faint) !important;
+
+  /* Remap links & interactive elements to frost blue */
+  --text-accent: var(--frost-border-bright) !important;
+  --text-accent-hover: #ffffff !important;
+  --link-color: var(--frost-border-bright) !important;
+  --link-color-hover: #ffffff !important;
+  --link-external-color: var(--frost-border-bright) !important;
+  --link-external-color-hover: #ffffff !important;
+
+  /* Corner Snowflake/Crystal Size Controls */
+  --frost-corner-size: 88px;
+  --frost-corner-offset: -26px;
+
+/* ==========================================================================
+     PREDETERMINED VECTOR ICE FRACTURES & FROST RIM
+     ========================================================================== */
+  background-color: var(--frost-bg-deep) !important;
+  background-image:
+    /* 1. Frosted Edge Vignettes (Subtle corner/edge cold bloom) */
+    radial-gradient(ellipse 90% 25% at 50% 0%, rgba(224, 242, 254, 0.15) 0%, transparent 80%),
+    radial-gradient(ellipse 90% 20% at 50% 100%, rgba(56, 189, 248, 0.12) 0%, transparent 75%),
+    
+    /* 2. Three Predetermined Scaled Ice Fractures (Static full-sheet SVG) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1200' preserveAspectRatio='none'%3E%3C!-- FRACTURE 1: Upper-Right Token Splinter --%3E%3Cpath d='M920,80 L840,160 L780,140 L720,230 L650,280 L620,390' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.6' stroke-linejoin='miter' stroke-linecap='round'/%3E%3Cpath d='M840,160 L870,220 L830,260' fill='none' stroke='%23e0f2fe' stroke-width='0.9' stroke-opacity='0.45'/%3E%3Cpath d='M720,230 L760,250 L770,320' fill='none' stroke='%2338bdf8' stroke-width='0.9' stroke-opacity='0.4'/%3E%3C!-- FRACTURE 2: Mid-Left Combat Box Fracture --%3E%3Cpath d='M40,410 L130,460 L180,440 L270,510 L340,490 L390,560' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.55' stroke-linejoin='miter' stroke-linecap='round'/%3E%3Cpath d='M180,440 L210,390 L260,380' fill='none' stroke='%23e0f2fe' stroke-width='0.9' stroke-opacity='0.45'/%3E%3Cpath d='M270,510 L250,580 L290,620' fill='none' stroke='%2338bdf8' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C!-- FRACTURE 3: Bottom-Center Upward Splinter --%3E%3Cpath d='M520,1160 L480,1050 L530,970 L470,890 L510,810 L460,740' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.5' stroke-linejoin='miter' stroke-linecap='round'/%3E%3Cpath d='M530,970 L580,950 L630,980' fill='none' stroke='%23e0f2fe' stroke-width='0.8' stroke-opacity='0.4'/%3E%3Cpath d='M470,890 L420,860 L390,890' fill='none' stroke='%2338bdf8' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C/svg%3E"),
+    
+    /* 3. Deep Pack-Ice Density Gradient */
+    linear-gradient(180deg, #081824 0%, #040c13 50%, #02070a 100%) !important;
+
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+
+  /* Frosted Glass Edge Border */
+  border: 1.5px solid rgba(125, 211, 252, 0.55) !important;
+  border-top: 2px solid #ffffff !important;
+  border-bottom: 2px solid #0284c7 !important;
+  
+  /* Luminous Frost Rim Glow */
+  box-shadow: 
+    inset 0 0 16px rgba(125, 211, 252, 0.25),
+    inset 0 0 35px rgba(56, 189, 248, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    0 12px 34px rgba(0, 0, 0, 0.9),
+    0 0 14px rgba(56, 189, 248, 0.35) !important;
+
+  /* Allows corner snowflake flourishes to protrude over boundaries */
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* ==========================================================================
+   2. PROTRUDING FACETED SNOWFLAKE CRYSTAL FLOURISHES
+   ========================================================================== */
+
+/* Top-Left Protruding Hexagonal Snowflake Shard */
+.atlas-statblock::before,
+.atlas-sb-pane-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: var(--frost-corner-offset) !important;
+  left: var(--frost-corner-offset) !important;
+  width: var(--frost-corner-size) !important;
+  height: var(--frost-corner-size) !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  filter: drop-shadow(0 3px 10px rgba(56, 189, 248, 0.65)) drop-shadow(0 1px 4px rgba(0, 0, 0, 0.7)) !important;
+  /* Complex geometric 6-fold dendritic snowflake / ice star */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3C!-- Main Outer Spines --%3E%3Cline x1='40' y1='6' x2='40' y2='74' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='10' y1='23' x2='70' y2='57' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='10' y1='57' x2='70' y2='23' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3C!-- Central Faceted Ice Gem --%3E%3Cpolygon points='40,26 52,33 52,47 40,54 28,47 28,33' fill='%23050f17' stroke='%237dd3fc' stroke-width='1.5'/%3E%3Cpolygon points='40,30 49,35 49,45 40,50 31,45 31,35' fill='%2338bdf8' fill-opacity='0.6' stroke='%23e0f2fe' stroke-width='1'/%3E%3Cpolygon points='40,35 44,40 40,45 36,40' fill='%23ffffff'/%3E%3C!-- Top Arm Chevrons --%3E%3Cpolyline points='33,14 40,20 47,14' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='40,4 43,10 40,13 37,10' fill='%23e0f2fe'/%3E%3C!-- Bottom Arm Chevrons --%3E%3Cpolyline points='33,66 40,60 47,66' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='40,76 43,70 40,67 37,70' fill='%23e0f2fe'/%3E%3C!-- Top-Right Arm Chevrons --%3E%3Cpolyline points='60,20 54,27 63,31' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='73,21 68,26 65,24 69,19' fill='%23e0f2fe'/%3E%3C!-- Bottom-Left Arm Chevrons --%3E%3Cpolyline points='20,60 26,53 17,49' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='7,59 12,54 15,56 11,61' fill='%23e0f2fe'/%3E%3C!-- Bottom-Right Arm Chevrons --%3E%3Cpolyline points='60,60 54,53 63,49' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='73,59 68,54 65,56 69,61' fill='%23e0f2fe'/%3E%3C!-- Top-Left Arm Chevrons --%3E%3Cpolyline points='20,20 26,27 17,31' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='7,21 12,26 15,24 11,19' fill='%23e0f2fe'/%3E%3C/svg%3E") !important;
+}
+
+/* Bottom-Right Protruding Snowflake Shard */
+.atlas-statblock::after,
+.atlas-sb-pane-card::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: var(--frost-corner-offset) !important;
+  right: var(--frost-corner-offset) !important;
+  width: var(--frost-corner-size) !important;
+  height: var(--frost-corner-size) !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: rotate(180deg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  filter: drop-shadow(0 3px 10px rgba(125, 211, 252, 0.65)) drop-shadow(0 1px 4px rgba(0, 0, 0, 0.7)) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cline x1='40' y1='6' x2='40' y2='74' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='10' y1='23' x2='70' y2='57' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3Cline x1='10' y1='57' x2='70' y2='23' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round'/%3E%3Cpolygon points='40,26 52,33 52,47 40,54 28,47 28,33' fill='%23050f17' stroke='%237dd3fc' stroke-width='1.5'/%3E%3Cpolygon points='40,30 49,35 49,45 40,50 31,45 31,35' fill='%2338bdf8' fill-opacity='0.6' stroke='%23e0f2fe' stroke-width='1'/%3E%3Cpolygon points='40,35 44,40 40,45 36,40' fill='%23ffffff'/%3E%3Cpolyline points='33,14 40,20 47,14' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='40,4 43,10 40,13 37,10' fill='%23e0f2fe'/%3E%3Cpolyline points='33,66 40,60 47,66' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='40,76 43,70 40,67 37,70' fill='%23e0f2fe'/%3E%3Cpolyline points='60,20 54,27 63,31' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='73,21 68,26 65,24 69,19' fill='%23e0f2fe'/%3E%3Cpolyline points='20,60 26,53 17,49' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='7,59 12,54 15,56 11,61' fill='%23e0f2fe'/%3E%3Cpolyline points='60,60 54,53 63,49' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='73,59 68,54 65,56 69,61' fill='%23e0f2fe'/%3E%3Cpolyline points='20,20 26,27 17,31' fill='none' stroke='%237dd3fc' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpolygon points='7,21 12,26 15,24 11,19' fill='%23e0f2fe'/%3E%3C/svg%3E") !important;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & INTERACTIVE LINKS
+   ========================================================================== */
+
+.atlas-statblock,
+.atlas-statblock *,
+.atlas-sb-pane-card,
+.atlas-sb-pane-card * {
+  color: var(--frost-text-main);
+}
+
+.atlas-statblock .atlas-sb-muted,
+.atlas-statblock [data-dim="true"],
+.atlas-statblock .atlas-sb-run-in-label,
+.atlas-sb-pane-card .atlas-sb-muted,
+.atlas-sb-pane-card .atlas-sb-run-in-label {
+  color: var(--frost-text-muted) !important;
+}
+
+/* Clickable Links & Inline Entities */
+.atlas-statblock a,
+.atlas-statblock a.internal-link,
+.atlas-statblock [data-link],
+.atlas-statblock [data-clickable="true"],
+.atlas-sb-pane-card a,
+.atlas-sb-pane-card a.internal-link,
+.atlas-sb-pane-card [data-link],
+.atlas-sb-pane-card [data-clickable="true"] {
+  color: var(--frost-border-bright) !important;
+  text-decoration-color: rgba(125, 211, 252, 0.45) !important;
+  font-weight: 600;
+  transition: all 120ms ease;
+}
+
+.atlas-statblock a:hover,
+.atlas-sb-pane-card a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px var(--frost-border-cyan) !important;
+  text-decoration: underline !important;
+  text-decoration-color: #ffffff !important;
+}
+
+/* Rest Action Buttons */
+.atlas-statblock [data-action^="rest"],
+.atlas-statblock button[data-action],
+.atlas-sb-pane-card [data-action^="rest"],
+.atlas-sb-pane-card button[data-action] {
+  color: var(--frost-border-bright) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow) !important;
+}
+
+.atlas-statblock [data-action^="rest"]:hover,
+.atlas-sb-pane-card [data-action^="rest"]:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px var(--frost-border-cyan) !important;
+}
+
+/* ==========================================================================
+   4. HEADINGS & TAPERED RIME DIVIDERS
+   ========================================================================== */
+
+.atlas-statblock .atlas-sb-heading,
+.atlas-statblock .atlas-sb-section-heading,
+.atlas-sb-pane-card .atlas-sb-heading,
+.atlas-sb-pane-card .atlas-sb-section-heading {
+  font-family: "Cinzel", "Georgia", serif !important;
+  color: var(--frost-heading) !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+  padding-bottom: 3px !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+  text-shadow: 0 0 8px var(--frost-bright-glow) !important;
+}
+
+.atlas-statblock hr,
+.atlas-statblock [data-block="divider"],
+.atlas-sb-pane-card [data-block="divider"] {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(21, 94, 117, 0.7) 15%, 
+    var(--frost-border-cyan) 50%, 
+    rgba(21, 94, 117, 0.7) 85%, 
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 8px var(--frost-bright-glow) !important;
+  margin: 10px 0 !important;
+  opacity: 0.9 !important;
+}
+
+/* ==========================================================================
+   5. METRIC BOXES (CHISELED ICE SHELVES)
+   ========================================================================== */
+
+.atlas-statblock [data-block="metric"],
+.atlas-sb-pane-card [data-block="metric"] {
+  background: linear-gradient(
+    145deg, 
+    rgba(56, 189, 248, 0.16) 0%, 
+    rgba(12, 29, 41, 0.85) 60%,
+    rgba(125, 211, 252, 0.12) 100%
+  ) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-top: 2.5px solid var(--frost-border-bright) !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(224, 242, 254, 0.25) !important;
+}
+
+/* ==========================================================================
+   6. ABILITY SCORES & CURRENCY TABLES (CONTAINED)
+   ========================================================================== */
+
+.atlas-statblock [data-block="scores"],
+.atlas-sb-pane-card [data-block="scores"] {
+  --table-header-background: transparent !important;
+  --table-header-background-hover: transparent !important;
+  --table-row-background-even: transparent !important;
+  --table-row-background-odd: transparent !important;
+  --table-background: transparent !important;
+  --table-border-color: transparent !important;
+  overflow: visible !important;
+}
+
+
+/* Currency */
+.atlas-statblock [data-block-id="0ghhsttd"],
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] {
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] table,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] table {
+  border-collapse: separate !important;
+  border-spacing: 4px !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] th,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
+  background: var(--frost-bg-elevated) !important;
+  color: var(--frost-border-bright) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  letter-spacing: 0.05em !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow) !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] td,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
+  background: rgba(12, 29, 41, 0.85) !important;
+  color: var(--frost-text-main) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  border-radius: 4px !important;
+  padding: 5px 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block="scores"] tr,
+.atlas-sb-pane-card [data-block="scores"] tr {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   7. TABS (ACTIONS, SPELLS, FEATURES — SINGLE-ROW FITTING)
+   ========================================================================== */
+
+.atlas-statblock [role="tablist"],
+.atlas-sb-pane-card [role="tablist"] {
+  background: rgba(7, 21, 30, 0.85) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+  gap: 3px !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+
+.atlas-statblock [role="tab"],
+.atlas-sb-pane-card [role="tab"] {
+  border-radius: 3px !important;
+  color: var(--frost-text-muted) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  padding: 3px 7px !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock [role="tab"]:hover,
+.atlas-sb-pane-card [role="tab"]:hover {
+  color: #ffffff !important;
+  background: rgba(56, 189, 248, 0.18) !important;
+}
+
+.atlas-statblock [role="tab"][aria-selected="true"],
+.atlas-sb-pane-card [role="tab"][aria-selected="true"] {
+  background: linear-gradient(135deg, var(--frost-border-rim) 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border-color: var(--frost-border-bright) !important;
+  box-shadow: 0 0 8px var(--frost-glow) !important;
+}
+
+/* ==========================================================================
+   8. PIPS & COUNTERS (FROST GEMS & COUNTERS)
+   ========================================================================== */
+
+.atlas-statblock [data-block="counters"] svg,
+.atlas-sb-pane-card [data-block="counters"] svg,
+.atlas-statblock [data-pip] svg,
+.atlas-sb-pane-card [data-pip] svg {
+  fill: var(--frost-border-bright) !important;
+  stroke: #ffffff !important;
+  color: var(--frost-border-bright) !important;
+  filter: drop-shadow(0 0 4px var(--frost-bright-glow)) !important;
+}
+
+.atlas-statblock [data-block="counters"] [data-used="true"] svg,
+.atlas-sb-pane-card [data-block="counters"] [data-used="true"] svg,
+.atlas-statblock [data-pip][data-empty="true"] svg,
+.atlas-sb-pane-card [data-pip][data-empty="true"] svg {
+  fill: transparent !important;
+  stroke: var(--frost-border-rim) !important;
+  opacity: 0.35 !important;
+  filter: none !important;
+}
+
+/* Track Boxes (Diamond-Cut Ice Pips) */
+.atlas-statblock .atlas-sb-track-box,
+.atlas-sb-pane-card .atlas-sb-track-box {
+  border: 1.5px solid var(--frost-border-cyan) !important;
+  background: rgba(5, 15, 23, 0.6) !important;
+  border-radius: 3px !important;
+  transform: rotate(45deg) scale(0.78) !important;
+  margin: 0 3px !important;
+  transition: all 0.15s ease !important;
+}
+
+.atlas-statblock .atlas-sb-track-box.is-marked,
+.atlas-sb-pane-card .atlas-sb-track-box.is-marked {
+  background: linear-gradient(135deg, var(--frost-border-bright) 0%, #0284c7 100%) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 8px var(--frost-border-bright) !important;
+}
+
+/* ==========================================================================
+   9. SKILLS & ROLL BUTTONS
+   ========================================================================== */
+
+.atlas-statblock [data-block-id="c5skgrp0"] [data-block="row"],
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] [data-block="row"] {
+  border-bottom: 1px dashed rgba(56, 189, 248, 0.25) !important;
+  padding: 1px 4px !important;
+}
+
+.atlas-statblock [data-block-id^="c5sk"][data-block-id$="p0"],
+.atlas-sb-pane-card [data-block-id^="c5sk"][data-block-id$="p0"] {
+  color: var(--frost-border-bright) !important;
+}
+
+.atlas-statblock button[class*="roll"],
+.atlas-statblock [data-roll],
+.atlas-sb-pane-card button[class*="roll"],
+.atlas-sb-pane-card [data-roll] {
+  background: rgba(56, 189, 248, 0.14) !important;
+  color: var(--frost-border-bright) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-radius: 4px !important;
+  padding: 0 5px !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow) !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock button[class*="roll"]:hover,
+.atlas-statblock [data-roll]:hover,
+.atlas-sb-pane-card button[class*="roll"]:hover,
+.atlas-sb-pane-card [data-roll]:hover {
+  background: linear-gradient(135deg, var(--frost-border-bright) 0%, #0284c7 100%) !important;
+  color: #030a10 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 10px var(--frost-border-bright) !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   10. PROFICIENCY BONUS TOGGLE PILL
+   ========================================================================== */
+
+.atlas-statblock [data-block-id="c5pb0000"],
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container,
+.atlas-sb-pane-card [data-block-id="c5pb0000"],
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container {
+  --interactive-accent: var(--frost-border-cyan) !important;
+  --interactive-accent-hover: var(--frost-border-bright) !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-statblock [data-block-id="c5pb0000"] input[type="checkbox"]:checked,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-sb-pane-card [data-block-id="c5pb0000"] input[type="checkbox"]:checked {
+  background-color: var(--frost-border-cyan) !important;
+  background: linear-gradient(135deg, var(--frost-border-cyan) 0%, var(--frost-border-bright) 100%) !important;
+  border-color: var(--frost-border-bright) !important;
+  box-shadow: 0 0 8px var(--frost-glow) !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked)::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked)::before {
+  background-color: var(--frost-border-cyan) !important;
+  background: linear-gradient(135deg, var(--frost-border-cyan) 0%, var(--frost-border-bright) 100%) !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
+  background-color: #f0fdfa !important;
+  border: 1px solid var(--frost-border-cyan) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   11. SCENE TOKEN PREVIEW WINDOW FIX
+   ========================================================================== */
+
+.atlas-statblock-preview-window,
+.atlas-statblock-preview-window .atlas-statblock-body,
+.atlas-vtt-plugin .atlas-statblock-link__preview,
+.atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
+  background-color: var(--frost-bg-deep) !important;
+  background-image:
+    radial-gradient(ellipse 90% 25% at 50% 0%, rgba(224, 242, 254, 0.15) 0%, transparent 80%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1200' preserveAspectRatio='none'%3E%3Cpath d='M920,80 L840,160 L780,140 L720,230 L650,280 L620,390' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.6' stroke-linejoin='miter' stroke-linecap='round'/%3E%3Cpath d='M840,160 L870,220 L830,260' fill='none' stroke='%23e0f2fe' stroke-width='0.9' stroke-opacity='0.45'/%3E%3Cpath d='M40,410 L130,460 L180,440 L270,510 L340,490 L390,560' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.55' stroke-linejoin='miter' stroke-linecap='round'/%3E%3Cpath d='M520,1160 L480,1050 L530,970 L470,890 L510,810 L460,740' fill='none' stroke='%237dd3fc' stroke-width='1.5' stroke-opacity='0.5' stroke-linejoin='miter' stroke-linecap='round'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #081824 0%, #040c13 50%, #02070a 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  color: var(--frost-text-main) !important;
+  --text-normal: var(--frost-text-main) !important;
+  --text-muted: var(--frost-text-muted) !important;
+  --text-faint: var(--frost-text-faint) !important;
+}
+
+.atlas-statblock-preview-window {
+  border: 1.5px solid var(--frost-border-cyan) !important;
+  border-top: 2px solid var(--frost-border-bright) !important;
+  box-shadow: 
+    inset 0 0 0 1.5px var(--frost-bg-deep),
+    inset 0 0 0 3px var(--frost-border-rim),
+    0 16px 36px rgba(0, 0, 0, 0.9),
+    0 0 16px var(--frost-glow) !important;
+  border-radius: 6px !important;
+  overflow: visible !important;
+}
+
+/* ==========================================================================
+   12. DROPDOWNS & DEEP FROST INPUTS / TEXTAREAS
+   ========================================================================== */
+
+/* 1. Dropdown Popup Box & Options */
+.atlas-vtt-plugin .atlas-sb-pane-options {
+  background: var(--frost-bg-elevated) !important;
+  border: 1px solid var(--frost-border-cyan) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 12px var(--frost-bright-glow) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option {
+  color: var(--frost-text-main) !important;
+  background: transparent !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option.is-selected {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.3) 0%, rgba(125, 211, 252, 0.2) 100%) !important;
+  color: #ffffff !important;
+}
+
+/* 2. Text/Number Inputs, Controls & Contenteditable Fields */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input,
+.atlas-vtt-plugin .atlas-sb-pane-input,
+.atlas-statblock input[type="text"],
+.atlas-statblock input[type="number"],
+.atlas-statblock textarea,
+.atlas-sb-pane-card input[type="text"],
+.atlas-sb-pane-card input[type="number"],
+.atlas-sb-pane-card textarea,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"],
+.atlas-statblock [contenteditable="true"],
+.atlas-sb-pane-card [contenteditable="true"] {
+  background-color: var(--frost-bg-elevated) !important;
+  background: var(--frost-bg-elevated) !important;
+  color: var(--frost-text-main) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Freeform note box */
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"] {
+  padding: 4px 8px !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Focus State */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text:focus,
+.atlas-vtt-plugin [contenteditable="plaintext-only"]:focus,
+.atlas-statblock input:focus,
+.atlas-statblock textarea:focus,
+.atlas-sb-pane-card input:focus,
+.atlas-sb-pane-card textarea:focus {
+  background-color: var(--frost-bg-focus) !important;
+  background: var(--frost-bg-focus) !important;
+  color: #ffffff !important;
+  border-color: var(--frost-border-bright) !important;
+  outline: 2px solid var(--frost-border-cyan) !important;
+  outline-offset: 1px !important;
+  box-shadow: 0 0 10px var(--frost-bright-glow) !important;
+}
+
+/* 4. Extra Labels, Add Entry Buttons & Placeholders */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-entry-extra-label {
+  color: var(--frost-border-bright) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon {
+  color: var(--frost-border-bright) !important;
+  background: transparent !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry:hover,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon:hover {
+  color: #ffffff !important;
+  background-color: rgba(56, 189, 248, 0.16) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-entry__text[data-placeholder]:empty:before,
+.atlas-vtt-plugin .atlas-sb-pane-input::placeholder,
+.atlas-statblock input::placeholder,
+.atlas-statblock textarea::placeholder {
+  color: var(--frost-text-muted) !important;
+  opacity: 0.65 !important;
+}
+
+/* 5. Suppress Browser Autofill Blue Tint */
+.atlas-vtt-plugin input:-webkit-autofill,
+.atlas-vtt-plugin input:-webkit-autofill:hover, 
+.atlas-vtt-plugin input:-webkit-autofill:focus,
+.atlas-statblock input:-webkit-autofill {
+  -webkit-text-fill-color: var(--frost-text-main) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--frost-bg-elevated) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* ==========================================================================
+   13. RESET COUNTER BUTTON: HOLLOW INTERIOR & GLACIAL CYAN STROKE
+   ========================================================================== */
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset,
+.atlas-statblock button.atlas-sb-counter__reset,
+.atlas-sb-pane-card button.atlas-sb-counter__reset {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  color: var(--frost-border-bright) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg {
+  fill: transparent !important;
+  stroke: var(--frost-border-cyan) !important;
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  color: var(--frost-border-cyan) !important;
+  filter: drop-shadow(0 0 3px var(--frost-glow)) !important;
+  transition: transform 0.15s ease, stroke 0.15s ease, filter 0.15s ease !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline) {
+  fill: transparent !important;
+  stroke: var(--frost-border-cyan) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset:hover svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg,
+.atlas-statblock button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline) {
+  stroke: #ffffff !important;
+  filter: drop-shadow(0 0 8px var(--frost-border-bright)) !important;
+  transform: rotate(-30deg) !important;
+}
+/* ==========================================================================
+   ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (FROSTFALL GLADE)
+   ========================================================================== */
+.atlas-ctx-menu,
+.atlas-ctx-menu--dropdown,
+.atlas-vtt-plugin .atlas-sb-pane-options,
+.atlas-sb-pane-options {
+  background: #0c1d29 !important;
+  border: 1.5px solid #38bdf8 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 12px rgba(125, 211, 252, 0.3) !important;
+  color: #f0fdfa !important;
+  padding: 4px !important;
+}
+
+.atlas-ctx-item,
+.atlas-vtt-plugin .atlas-sb-pane-option,
+.atlas-sb-pane-option {
+  color: #f0fdfa !important;
+  background: transparent !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  transition: background-color 100ms ease, color 100ms ease !important;
+}
+
+.atlas-ctx-item:hover,
+.atlas-ctx-item:focus,
+.atlas-ctx-item[data-highlighted],
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-sb-pane-option:hover,
+.atlas-sb-pane-option:focus {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.28) 0%, rgba(125, 211, 252, 0.18) 100%) !important;
+  color: #ffffff !important;
+  outline: none !important;
+}
+
+.atlas-ctx-item[data-state="checked"],
+.atlas-ctx-item[aria-checked="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-sb-pane-option[aria-selected="true"] {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.35) 0%, rgba(125, 211, 252, 0.22) 100%) !important;
+  color: #7dd3fc !important;
+  font-weight: 600 !important;
+}
+
+.atlas-ctx-item__check svg {
+  stroke: #7dd3fc !important;
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.45));
+}
+
+.atlas-ctx-separator {
+  background: rgba(56, 189, 248, 0.3) !important;
+  height: 1px !important;
+}
+/* ==========================================================================
+   ATLAS VTT: FROST LINK HOVER POPOVERS & NATIVE SHEET TABLES
+   ========================================================================== */
+
+/* --- 1. Hover Popover Theming & Protruding Ice Corners --- */
+.popover.hover-popover {
+  background-color: var(--frost-bg-deep, #050f17) !important;
+  background-image: 
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(224, 242, 254, 0.12) 0%, transparent 80%),
+    linear-gradient(180deg, #091a27 0%, #030c13 100%) !important;
+  border: 1.5px solid var(--frost-border-cyan, #38bdf8) !important;
+  border-top: 2px solid #ffffff !important;
+  border-radius: 6px !important;
+  box-shadow: 
+    inset 0 0 12px rgba(125, 211, 252, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.85),
+    0 0 12px var(--frost-glow, rgba(56, 189, 248, 0.4)) !important;
+  color: var(--frost-text-main, #f0fdfa) !important;
+  position: absolute !important;
+  overflow: visible !important;
+}
+
+.popover.hover-popover .markdown-preview-view,
+.popover.hover-popover .markdown-embed,
+.popover.hover-popover .markdown-embed-content {
+  background: transparent !important;
+  color: var(--frost-text-main, #f0fdfa) !important;
+}
+
+.popover.hover-popover :is(h1, h2, h3, h4, h5, h6, strong, b) {
+  color: var(--frost-heading, #7dd3fc) !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow, rgba(125, 211, 252, 0.25)) !important;
+}
+
+.popover.hover-popover a.internal-link {
+  color: var(--frost-border-bright, #7dd3fc) !important;
+}
+
+/* Compact Snowflake Shard (Top-Left) */
+.popover.hover-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -14px !important;
+  left: -14px !important;
+  width: 48px !important;
+  height: 48px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cline x1='40' y1='10' x2='40' y2='70' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='14' y1='25' x2='66' y2='55' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='14' y1='55' x2='66' y2='25' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpolygon points='40,30 48,35 48,45 40,50 32,45 32,35' fill='%23050f17' stroke='%237dd3fc' stroke-width='2'/%3E%3Cpolygon points='40,34 44,38 40,42 36,38' fill='%23ffffff'/%3E%3Cpolyline points='34,18 40,24 46,18' fill='none' stroke='%237dd3fc' stroke-width='2'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.6)) !important;
+}
+
+/* Compact Snowflake Shard (Bottom-Right) */
+.popover.hover-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -14px !important;
+  right: -14px !important;
+  width: 48px !important;
+  height: 48px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: rotate(180deg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cline x1='40' y1='10' x2='40' y2='70' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='14' y1='25' x2='66' y2='55' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='14' y1='55' x2='66' y2='25' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpolygon points='40,30 48,35 48,45 40,50 32,45 32,35' fill='%23050f17' stroke='%237dd3fc' stroke-width='2'/%3E%3Cpolygon points='40,34 44,38 40,42 36,38' fill='%23ffffff'/%3E%3Cpolyline points='34,18 40,24 46,18' fill='none' stroke='%237dd3fc' stroke-width='2'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 -2px 6px rgba(125, 211, 252, 0.6)) !important;
+}
+
+/* --- 2. Native Atlas Sheet Tables Header Text & Cells --- */
+.atlas-statblock .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
+  background-color: var(--frost-bg-elevated, #0c1d29) !important;
+  color: var(--frost-border-bright, #7dd3fc) !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow, rgba(125, 211, 252, 0.25)) !important;
+}
+
+.atlas-statblock .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
+  background-color: rgba(12, 29, 41, 0.75) !important;
+  color: var(--frost-text-main, #f0fdfa) !important;
+  border-color: rgba(56, 189, 248, 0.22) !important;
+}
+
+.atlas-sb-sheet-table__handle svg {
+  stroke: var(--frost-border-bright, #7dd3fc) !important;
+}
+/* ==========================================================================
+   ATLAS VTT: ACTION-USE PIPS & OPEN ABILITY SCORES (FROSTFALL GLADE)
+   ========================================================================== */
+
+/* --- 1. Action-Use Pips (.action-use Checkboxes) --- */
+.atlas-statblock input[type="checkbox"].action-use,
+.atlas-sb-pane-card input[type="checkbox"].action-use,
+.atlas-sb-sheet input[type="checkbox"].action-use {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  margin: 0 2px !important;
+  background-color: var(--frost-bg-elevated, #0c1d29) !important;
+  border: 1.5px solid var(--frost-border-rim, #164e63) !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:checked,
+.atlas-sb-pane-card input[type="checkbox"].action-use:checked,
+.atlas-sb-sheet input[type="checkbox"].action-use:checked {
+  background: linear-gradient(135deg, var(--frost-border-bright, #7dd3fc) 0%, #0284c7 100%) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 6px var(--frost-border-bright, #7dd3fc) !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:after,
+.atlas-sb-pane-card input[type="checkbox"].action-use:after,
+.atlas-sb-sheet input[type="checkbox"].action-use:after {
+  display: none !important;
+}
+
+/* --- 2. Open Ability Scores (Transposed Headers & Clean Rows) --- */
+.atlas-statblock [data-block-id="c5stats0"] table,
+.atlas-sb-pane-card [data-block-id="c5stats0"] table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+  margin: 8px 0 12px 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] :is(th, td) {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 4px 2px !important;
+  text-align: center !important;
+}
+
+/* Ability Headers (STR, DEX, etc.) */
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td) {
+  color: var(--frost-heading, #7dd3fc) !important;
+  font-family: "Cinzel", "Modesto Condensed", "Georgia", serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid rgba(56, 189, 248, 0.45) !important;
+  text-shadow: 0 0 6px var(--frost-bright-glow, rgba(125, 211, 252, 0.25)) !important;
+  padding-bottom: 4px !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] thead tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead tr > :first-child {
+  border-bottom: 2px solid transparent !important;
+  visibility: hidden !important;
+}
+
+/* Side Labels (SCORE, MOD, SAVE) */
+.atlas-statblock [data-block-id="c5stats0"] tbody :is(th, td:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody :is(th, td:first-child) {
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--frost-text-muted, #99f6e4) !important;
+  text-align: right !important;
+  padding-right: 8px !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before {
+  content: "Score" !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child *,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Base Scores */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child) {
+  color: var(--frost-text-faint, #5eead4) !important;
+  font-size: 0.82rem !important;
+  padding-top: 6px !important;
+}
+
+/* Mod & Save Roll Links */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child) {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link {
+  color: var(--frost-border-bright, #7dd3fc) !important;
+  font-weight: 700 !important;
+  border-bottom: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+  padding: 0 1px !important;
+  display: inline-block !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link:hover,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link:hover {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+  text-shadow: 0 0 8px var(--frost-border-cyan, #38bdf8) !important;
+}

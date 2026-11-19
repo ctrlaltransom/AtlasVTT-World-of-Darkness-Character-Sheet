@@ -1,0 +1,897 @@
+/* ==========================================================================
+   STYLE 1: 5E OFFICIAL PARCHMENT & WARM BRASS
+   File: atlas-5e-parchment.css
+   ========================================================================== */
+
+/* --- 1. Root Shell, Theme Overrides & Frame --- */
+.atlas-statblock,
+.atlas-sb-pane-card,
+.atlas-sb-sheet {
+  /* Force dark ink locally regardless of Obsidian Dark Mode */
+  --text-normal: #1f140e !important;
+  --text-muted: #543f2f !important;
+  --text-faint: #755b44 !important;
+
+  /* Remap links and interactive elements to rich crimson */
+  --text-accent: #8b151b !important;
+  --text-accent-hover: #b81d24 !important;
+  --link-color: #8b151b !important;
+  --link-color-hover: #b81d24 !important;
+  --link-external-color: #8b151b !important;
+  --link-external-color-hover: #b81d24 !important;
+
+  /* Stained Parchment Palette */
+  --sb-parchment: #e6d3b3;
+  --sb-parchment-elevated: #d9c39f;
+  --sb-parchment-border: #bfa173;
+  --sb-ink: #1f140e;
+  --sb-crimson: #8b151b;
+  --sb-crimson-bright: #b81d24;
+
+  /* Warm Copper / Brass Accent Tones */
+  --sb-copper-bright: #e0833a;
+  --sb-copper-mid: #b86527;
+  --sb-copper-dark: #6e350e;
+
+  /* Stained Vellum Texture */
+  background-color: var(--sb-parchment) !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 25%, rgba(255, 248, 230, 0.45) 0%, transparent 80%),
+    radial-gradient(circle at 100% 100%, rgba(110, 53, 14, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 0% 0%, rgba(110, 53, 14, 0.2) 0%, transparent 60%) !important;
+
+  color: var(--sb-ink) !important;
+  border-radius: 6px !important;
+  padding: 18px 20px !important;
+
+  /* Allows corner flourishes to spill over boundaries */
+  position: relative !important;
+  overflow: visible !important;
+
+  /* Burnished Copper / Brass Frame */
+  border: 3px solid var(--sb-copper-mid) !important;
+  box-shadow: 
+    inset 0 0 0 2px var(--sb-parchment),
+    inset 0 0 0 4px var(--sb-copper-dark),
+    0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   2. ANTIQUE BRASS & CRIMSON CORNER FILIGREE
+   ========================================================================== */
+
+/* Top-Left Scrollwork Bracket */
+.atlas-statblock::before,
+.atlas-sb-pane-card::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%236e350e' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%23b86527' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M10,10 L30,30 C34,20 44,14 60,12 C45,18 40,28 44,38 C32,36 22,26 10,10 Z' fill='%238b151b' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23e0833a' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='46' cy='10' r='3' fill='%23e0833a' stroke='%236e350e' stroke-width='1'/%3E%3Ccircle cx='10' cy='46' r='3' fill='%23e0833a' stroke='%236e350e' stroke-width='1'/%3E%3C/svg%3E");
+  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Bottom-Right Scrollwork Bracket */
+.atlas-statblock::after,
+.atlas-sb-pane-card::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%236e350e' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%23b86527' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M10,10 L30,30 C34,20 44,14 60,12 C45,18 40,28 44,38 C32,36 22,26 10,10 Z' fill='%238b151b' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23e0833a' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='46' cy='10' r='3' fill='%23e0833a' stroke='%236e350e' stroke-width='1'/%3E%3Ccircle cx='10' cy='46' r='3' fill='%23e0833a' stroke='%236e350e' stroke-width='1'/%3E%3C/svg%3E");
+  filter: drop-shadow(-2px -3px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & INTERACTIVE LINKS
+   ========================================================================== */
+
+.atlas-statblock,
+.atlas-statblock *,
+.atlas-sb-pane-card,
+.atlas-sb-pane-card * {
+  color: var(--sb-ink);
+  text-shadow: none !important;
+}
+
+.atlas-statblock .atlas-sb-muted,
+.atlas-statblock [data-dim="true"],
+.atlas-statblock .atlas-sb-run-in-label,
+.atlas-sb-pane-card .atlas-sb-muted,
+.atlas-sb-pane-card .atlas-sb-run-in-label {
+  color: var(--text-muted) !important;
+}
+
+/* Clickable Links */
+.atlas-statblock a,
+.atlas-statblock a.internal-link,
+.atlas-statblock [data-link],
+.atlas-statblock [data-clickable="true"],
+.atlas-sb-pane-card a,
+.atlas-sb-pane-card a.internal-link,
+.atlas-sb-pane-card [data-link],
+.atlas-sb-pane-card [data-clickable="true"] {
+  color: var(--sb-crimson) !important;
+  text-decoration-color: rgba(139, 21, 27, 0.4) !important;
+  font-weight: 600;
+  transition: all 120ms ease;
+}
+
+.atlas-statblock a:hover,
+.atlas-statblock a.internal-link:hover,
+.atlas-statblock [data-link]:hover,
+.atlas-statblock [data-clickable="true"]:hover,
+.atlas-sb-pane-card a:hover,
+.atlas-sb-pane-card a.internal-link:hover,
+.atlas-sb-pane-card [data-link]:hover,
+.atlas-sb-pane-card [data-clickable="true"]:hover {
+  color: var(--sb-crimson-bright) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--sb-crimson-bright) !important;
+}
+
+/* Rest Action Buttons */
+.atlas-statblock [data-action^="rest"],
+.atlas-statblock button[data-action],
+.atlas-sb-pane-card [data-action^="rest"],
+.atlas-sb-pane-card button[data-action] {
+  color: var(--sb-crimson) !important;
+  font-weight: 600 !important;
+}
+
+.atlas-statblock [data-action^="rest"]:hover,
+.atlas-sb-pane-card [data-action^="rest"]:hover {
+  color: var(--sb-crimson-bright) !important;
+}
+
+/* ==========================================================================
+   4. HEADINGS & DIVIDERS
+   ========================================================================== */
+
+.atlas-statblock .atlas-sb-heading,
+.atlas-statblock .atlas-sb-section-heading,
+.atlas-sb-pane-card .atlas-sb-heading,
+.atlas-sb-pane-card .atlas-sb-section-heading {
+  font-family: "Cinzel", "Modesto Condensed", "Georgia", serif !important;
+  color: var(--sb-crimson) !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--sb-copper-mid) !important;
+  padding-bottom: 2px !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.atlas-statblock hr,
+.atlas-statblock [data-block="divider"],
+.atlas-sb-pane-card [data-block="divider"] {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, var(--sb-crimson) 0%, var(--sb-copper-bright) 50%, transparent 100%) !important;
+  margin: 10px 0 !important;
+  opacity: 0.85 !important;
+}
+
+/* ==========================================================================
+   5. METRIC BOXES (COMBAT & SENSES)
+   ========================================================================== */
+
+.atlas-statblock [data-block="metric"],
+.atlas-sb-pane-card [data-block="metric"] {
+  background: var(--sb-parchment-elevated) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-top: 3px solid var(--sb-crimson) !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+}
+
+/* ==========================================================================
+   6. ABILITY SCORES & CURRENCY TABLES (FIXED SCALING & CONTAINMENT)
+   ========================================================================== */
+
+/* Neutralize Obsidian table overrides */
+.atlas-statblock [data-block="scores"],
+.atlas-sb-pane-card [data-block="scores"] {
+  --table-header-background: transparent !important;
+  --table-header-background-hover: transparent !important;
+  --table-row-background-even: transparent !important;
+  --table-row-background-odd: transparent !important;
+  --table-background: transparent !important;
+  --table-border-color: transparent !important;
+  overflow: visible !important;
+}
+
+/* Ability Scores: Confined to 3 per line without overflowing Column 1 */
+.atlas-statblock [data-block-id="c5stats0"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] table,
+.atlas-sb-pane-card [data-block-id="c5stats0"] table {
+  border-collapse: separate !important;
+  border-spacing: 2px !important;
+  width: auto !important;
+  table-layout: auto !important;
+  margin: 0 !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] th,
+.atlas-sb-pane-card [data-block-id="c5stats0"] th {
+  background: var(--sb-parchment-elevated) !important;
+  color: var(--sb-crimson) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-radius: 3px !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-align: center !important;
+  padding: 1px 3px !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] td,
+.atlas-sb-pane-card [data-block-id="c5stats0"] td {
+  background: var(--sb-parchment-elevated) !important;
+  color: var(--sb-ink) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-radius: 3px !important;
+  font-size: 0.74rem !important;
+  padding: 2px 3px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+/* Ability Name Label */
+.atlas-statblock [data-block-id="c5stats0"] td:first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] td:first-child {
+  font-weight: 700 !important;
+  color: var(--sb-crimson) !important;
+}
+
+/* Currency: Full width across bottom of Column 1 */
+.atlas-statblock [data-block-id="0ghhsttd"],
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] {
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] table,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] table {
+  border-collapse: separate !important;
+  border-spacing: 4px !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] th,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
+  background: var(--sb-parchment-elevated) !important;
+  color: var(--sb-crimson) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  letter-spacing: 0.05em !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] td,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
+  background: var(--sb-parchment-elevated) !important;
+  color: var(--sb-ink) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-radius: 4px !important;
+  padding: 5px 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block="scores"] tr,
+.atlas-sb-pane-card [data-block="scores"] tr {
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   7. TABS (ACTIONS, SPELLS, FEATURES — SINGLE-ROW FITTING)
+   ========================================================================== */
+
+.atlas-statblock [role="tablist"],
+.atlas-sb-pane-card [role="tablist"] {
+  background: var(--sb-parchment-elevated) !important;
+  border: 1px solid var(--sb-parchment-border) !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+  gap: 2px !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+
+.atlas-statblock [role="tab"],
+.atlas-sb-pane-card [role="tab"] {
+  border-radius: 3px !important;
+  color: var(--text-muted) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  padding: 3px 6px !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [role="tab"][aria-selected="true"],
+.atlas-sb-pane-card [role="tab"][aria-selected="true"] {
+  background: var(--sb-crimson) !important;
+  color: #fffaf0 !important;
+}
+
+/* ==========================================================================
+   8. PIPS & COUNTERS (SPELL SLOTS, HIT DICE, DEATH SAVES)
+   ========================================================================== */
+
+.atlas-statblock [data-block="counters"] svg,
+.atlas-sb-pane-card [data-block="counters"] svg,
+.atlas-statblock [data-pip] svg,
+.atlas-sb-pane-card [data-pip] svg {
+  fill: var(--sb-crimson) !important;
+  stroke: var(--sb-copper-mid) !important;
+  color: var(--sb-crimson) !important;
+}
+
+.atlas-statblock [data-block="counters"] [data-used="true"] svg,
+.atlas-sb-pane-card [data-block="counters"] [data-used="true"] svg,
+.atlas-statblock [data-pip][data-empty="true"] svg,
+.atlas-sb-pane-card [data-pip][data-empty="true"] svg {
+  fill: transparent !important;
+  stroke: var(--sb-parchment-border) !important;
+  opacity: 0.45 !important;
+}
+
+/* ==========================================================================
+   9. SKILLS (REVERTED TO DEFAULT INHERITED FORMATTING)
+   ========================================================================== */
+
+.atlas-statblock [data-block-id="c5skgrp0"] [data-block="row"],
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] [data-block="row"] {
+  border-bottom: 1px dashed rgba(184, 101, 39, 0.35) !important;
+  padding: 1px 4px !important;
+}
+
+/* ==========================================================================
+   10. INTERACTIVE ROLL BUTTONS
+   ========================================================================== */
+
+.atlas-statblock button[class*="roll"],
+.atlas-statblock [data-roll],
+.atlas-sb-pane-card button[class*="roll"],
+.atlas-sb-pane-card [data-roll] {
+  background: rgba(139, 21, 27, 0.1) !important;
+  color: var(--sb-crimson) !important;
+  border: 1px solid rgba(139, 21, 27, 0.35) !important;
+  border-radius: 4px !important;
+  padding: 0 4px !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock button[class*="roll"]:hover,
+.atlas-statblock [data-roll]:hover,
+.atlas-sb-pane-card button[class*="roll"]:hover,
+.atlas-sb-pane-card [data-roll]:hover {
+  background: var(--sb-crimson) !important;
+  color: #ffffff !important;
+}
+/* ==========================================================================
+   11. PROFICIENCY BONUS TOGGLE PILL (FORCE CRIMSON ACTIVE BODY)
+   ========================================================================== */
+
+/* Set local accent variables on the stat container and the toggle itself */
+.atlas-statblock [data-block-id="c5pb0000"],
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container,
+.atlas-sb-pane-card [data-block-id="c5pb0000"],
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container {
+  --interactive-accent: #8b151b !important;
+  --interactive-accent-hover: #b81d24 !important;
+}
+
+/* Force the track body when toggled ON */
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-statblock [data-block-id="c5pb0000"] input[type="checkbox"]:checked,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-sb-pane-card [data-block-id="c5pb0000"] input[type="checkbox"]:checked {
+  background-color: #8b151b !important;
+  background: #8b151b !important;
+  border-color: #aa1921 !important;
+}
+
+/* Force the track body in case an inner element or pseudo-element draws the pill */
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked)::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked)::before {
+  background-color: #8b151b !important;
+  background: #8b151b !important;
+}
+
+/* Moving thumb knob */
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
+  background-color: #fffaf0 !important;
+  border: 1px solid #9b7834 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+/* ==========================================================================
+   SCENE TOKEN PREVIEW WINDOW FIX
+   ========================================================================== */
+
+.atlas-statblock-preview-window,
+.atlas-statblock-preview-window .atlas-statblock-body,
+.atlas-vtt-plugin .atlas-statblock-link__preview,
+.atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
+  background: var(--sb-parchment) !important;
+  background-color: var(--sb-parchment) !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 25%, rgba(255, 248, 230, 0.45) 0%, transparent 80%),
+    radial-gradient(circle at 100% 100%, rgba(110, 53, 14, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 0% 0%, rgba(110, 53, 14, 0.2) 0%, transparent 60%) !important;
+  color: var(--sb-ink) !important;
+  --text-normal: #1f140e !important;
+  --text-muted: #543f2f !important;
+  --text-faint: #755b44 !important;
+}
+
+.atlas-statblock-preview-window {
+  border: 3px solid var(--sb-copper-mid) !important;
+  box-shadow: 
+    inset 0 0 0 2px var(--sb-parchment),
+    inset 0 0 0 4px var(--sb-copper-dark),
+    0 12px 32px rgba(0, 0, 0, 0.75) !important;
+  border-radius: 6px !important;
+  overflow: visible !important;
+}
+/* ==========================================================================
+   ATLAS VTT: DROPDOWNS & PURE WARM PARCHMENT INPUTS
+   ========================================================================== */
+
+/* 1. Dropdown Popup Box & Options */
+.atlas-vtt-plugin .atlas-sb-pane-options {
+    background: var(--sb-parchment, #fdf6e2) !important;
+    border: 1px solid var(--sb-copper-mid, #8c431d) !important;
+    border-radius: var(--radius-m, 6px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option {
+    color: var(--sb-ink, #23160c) !important;
+    background: transparent !important;
+    padding: 4px 8px !important;
+    border-radius: var(--radius-s, 4px) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option.is-selected {
+    background-color: #f0e6c8 !important; /* Accent parchment */
+    color: var(--sb-ink, #23160c) !important;
+}
+
+/* 2. All Text Inputs, Number Inputs, Textareas & Contenteditable Fields */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input,
+.atlas-vtt-plugin .atlas-sb-pane-input,
+.atlas-statblock input[type="text"],
+.atlas-statblock input[type="number"],
+.atlas-statblock textarea,
+.atlas-sb-pane-card input[type="text"],
+.atlas-sb-pane-card input[type="number"],
+.atlas-sb-pane-card textarea,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"],
+.atlas-statblock [contenteditable="true"],
+.atlas-sb-pane-card [contenteditable="true"] {
+    background-color: var(--sb-parchment, #fdf6e2) !important;
+    background: var(--sb-parchment, #fdf6e2) !important;
+    color: var(--sb-ink, #23160c) !important;
+    border: 1px solid var(--sb-copper-mid, #8c431d) !important;
+    border-radius: var(--radius-s, 4px) !important;
+    box-shadow: none !important;
+}
+
+/* Specific sizing/padding for the freeform note box ("Sap", etc.) */
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"] {
+    padding: 4px 8px !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Focus State (Warm pale ivory) */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text:focus,
+.atlas-vtt-plugin [contenteditable="plaintext-only"]:focus,
+.atlas-statblock input:focus,
+.atlas-statblock textarea:focus,
+.atlas-sb-pane-card input:focus,
+.atlas-sb-pane-card textarea:focus {
+    background-color: #fdfaf2 !important;
+    background: #fdfaf2 !important;
+    color: var(--sb-ink, #1f140e) !important;
+    border-color: var(--sb-copper-dark, #5c2009) !important;
+    outline: 2px solid var(--sb-copper-mid, #8c431d) !important;
+    outline-offset: 1px !important;
+    box-shadow: none !important;
+}
+
+/* 4. Extra Labels & Placeholders */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-entry-extra-label {
+    color: var(--sb-copper-mid, #8c431d) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-entry__text[data-placeholder]:empty:before,
+.atlas-vtt-plugin .atlas-sb-pane-input::placeholder,
+.atlas-statblock input::placeholder,
+.atlas-statblock textarea::placeholder {
+    color: var(--sb-copper-mid, #8c431d) !important;
+    opacity: 0.65 !important;
+}
+
+/* 5. Suppress Browser Autofill Blue Tint */
+.atlas-vtt-plugin input:-webkit-autofill,
+.atlas-vtt-plugin input:-webkit-autofill:hover, 
+.atlas-vtt-plugin input:-webkit-autofill:focus,
+.atlas-statblock input:-webkit-autofill {
+    -webkit-text-fill-color: var(--sb-ink, #23160c) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--sb-parchment, #fdf6e2) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+/* ==========================================================================
+   RESET COUNTER BUTTON: HOLLOW INTERIOR & CRIMSON ARROW STROKE
+   ========================================================================== */
+
+/* Button wrapper reset */
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset,
+.atlas-statblock button.atlas-sb-counter__reset,
+.atlas-sb-pane-card button.atlas-sb-counter__reset {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  color: var(--sb-crimson, #8b151b) !important;
+}
+
+/* SVG Path: Fill is parchment/transparent, stroke is the crimson accent */
+.atlas-statblock button.atlas-sb-counter__reset svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg {
+  fill: transparent !important;
+  stroke: var(--sb-crimson, #8b151b) !important;
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  color: var(--sb-crimson, #8b151b) !important;
+  transition: transform 0.15s ease, stroke 0.15s ease !important;
+}
+
+/* Target inner path elements directly to prevent bleed-through */
+.atlas-statblock button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline) {
+  fill: transparent !important;
+  stroke: var(--sb-crimson, #8b151b) !important;
+}
+
+/* Hover state: bright copper/crimson highlight with a slight snap */
+.atlas-statblock button.atlas-sb-counter__reset:hover svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg,
+.atlas-statblock button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline) {
+  stroke: var(--sb-crimson-bright, #b81d24) !important;
+  filter: drop-shadow(0 1px 2px rgba(110, 53, 14, 0.45)) !important;
+  transform: rotate(-30deg) !important;
+}
+/* ==========================================================================
+   ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (5E PARCHMENT)
+   ========================================================================== */
+.atlas-ctx-menu,
+.atlas-ctx-menu--dropdown,
+.atlas-vtt-plugin .atlas-sb-pane-options,
+.atlas-sb-pane-options {
+  background: var(--sb-parchment, #e6d3b3) !important;
+  border: 1.5px solid var(--sb-copper-mid, #b86527) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+  color: var(--sb-ink, #1f140e) !important;
+  padding: 4px !important;
+}
+
+.atlas-ctx-item,
+.atlas-vtt-plugin .atlas-sb-pane-option,
+.atlas-sb-pane-option {
+  color: var(--sb-ink, #1f140e) !important;
+  background: transparent !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  transition: background-color 100ms ease, color 100ms ease !important;
+}
+
+.atlas-ctx-item:hover,
+.atlas-ctx-item:focus,
+.atlas-ctx-item[data-highlighted],
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-sb-pane-option:hover,
+.atlas-sb-pane-option:focus {
+  background-color: var(--sb-parchment-elevated, #d9c39f) !important;
+  color: var(--sb-crimson, #8b151b) !important;
+  outline: none !important;
+}
+
+.atlas-ctx-item[data-state="checked"],
+.atlas-ctx-item[aria-checked="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-sb-pane-option[aria-selected="true"] {
+  background-color: var(--sb-parchment-elevated, #d9c39f) !important;
+  color: var(--sb-crimson, #8b151b) !important;
+  font-weight: 600 !important;
+}
+
+.atlas-ctx-item__check svg {
+  stroke: var(--sb-crimson, #8b151b) !important;
+}
+
+.atlas-ctx-separator {
+  background: var(--sb-parchment-border, #bfa173) !important;
+  height: 1px !important;
+}
+/* ==========================================================================
+   ATLAS VTT: 5E PARCHMENT LINK HOVER POPOVERS & NATIVE SHEET TABLES
+   ========================================================================== */
+
+/* --- 1. Hover Popover Theming & Corner Flourishes --- */
+.popover.hover-popover {
+  background-color: var(--sb-parchment, #e6d3b3) !important;
+  border: 2px solid var(--sb-copper-mid, #b86527) !important;
+  border-radius: 6px !important;
+  box-shadow: 
+    inset 0 0 0 1.5px var(--sb-parchment, #e6d3b3),
+    inset 0 0 0 3px var(--sb-copper-dark, #6e350e),
+    0 10px 28px rgba(0, 0, 0, 0.65) !important;
+  color: var(--sb-ink, #1f140e) !important;
+  position: absolute !important;
+  overflow: visible !important;
+}
+
+.popover.hover-popover .markdown-preview-view,
+.popover.hover-popover .markdown-embed,
+.popover.hover-popover .markdown-embed-content {
+  background: transparent !important;
+  color: var(--sb-ink, #1f140e) !important;
+}
+
+.popover.hover-popover :is(h1, h2, h3, h4, h5, h6, strong, b) {
+  color: var(--sb-crimson, #8b151b) !important;
+}
+
+.popover.hover-popover a.internal-link {
+  color: var(--sb-crimson, #8b151b) !important;
+}
+
+/* Compact Top-Left Brass Filigree */
+.popover.hover-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: -8px !important;
+  width: 44px !important;
+  height: 44px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%236e350e' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%23b86527' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M10,10 L30,30 C34,20 44,14 60,12 C45,18 40,28 44,38 C32,36 22,26 10,10 Z' fill='%238b151b' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23e0833a' stroke='%236e350e' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.45)) !important;
+}
+
+/* Compact Bottom-Right Brass Filigree */
+.popover.hover-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -8px !important;
+  right: -8px !important;
+  width: 44px !important;
+  height: 44px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: rotate(180deg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%236e350e' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,80 L10,24 C10,16 16,10 24,10 L80,10' fill='none' stroke='%23b86527' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M10,10 L30,30 C34,20 44,14 60,12 C45,18 40,28 44,38 C32,36 22,26 10,10 Z' fill='%238b151b' stroke='%236e350e' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23e0833a' stroke='%236e350e' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(-1px -2px 3px rgba(0, 0, 0, 0.45)) !important;
+}
+
+/* --- 2. Native Atlas Sheet Tables Header Text & Cells --- */
+.atlas-statblock .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
+  background-color: var(--sb-parchment-elevated, #d9c39f) !important;
+  color: var(--sb-crimson, #8b151b) !important;
+  border-color: var(--sb-parchment-border, #bfa173) !important;
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
+  background-color: var(--sb-parchment, #e6d3b3) !important;
+  color: var(--sb-ink, #1f140e) !important;
+  border-color: var(--sb-parchment-border, #bfa173) !important;
+}
+
+.atlas-sb-sheet-table__handle svg {
+  stroke: var(--sb-copper-mid, #b86527) !important;
+}
+/* ==========================================================================
+   ATLAS VTT: THEMED ACTION USE PIPS (.action-use CHECKBOXES)
+   ========================================================================== */
+
+/* Base Pip Track */
+.atlas-statblock input[type="checkbox"].action-use,
+.atlas-sb-pane-card input[type="checkbox"].action-use,
+.atlas-sb-sheet input[type="checkbox"].action-use {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  margin: 0 2px !important;
+  transition: all 120ms ease !important;
+}
+
+/* 5e Parchment Theme Pips */
+.atlas-statblock input[type="checkbox"].action-use,
+.atlas-sb-sheet input[type="checkbox"].action-use {
+  background-color: var(--sb-parchment-elevated, #d9c39f) !important;
+  border: 1.5px solid var(--sb-copper-mid, #b86527) !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:checked,
+.atlas-sb-sheet input[type="checkbox"].action-use:checked {
+  background-color: var(--sb-crimson, #8b151b) !important;
+  border-color: var(--sb-copper-dark, #6e350e) !important;
+  box-shadow: 0 0 4px rgba(139, 21, 27, 0.45) !important;
+}
+
+/* Remove Obsidian's SVG tick mask so it renders as a solid/beveled pip */
+.atlas-statblock input[type="checkbox"].action-use:after,
+.atlas-sb-pane-card input[type="checkbox"].action-use:after,
+.atlas-sb-sheet input[type="checkbox"].action-use:after {
+  display: none !important;
+}
+/* ==========================================================================
+   ATLAS VTT: ABILITY SCORES (CLEAN TRADITIONAL RPG COLUMN LAYOUT)
+   ========================================================================== */
+
+/* 1. Seamless table container */
+.atlas-statblock [data-block-id="c5stats0"] table,
+.atlas-sb-pane-card [data-block-id="c5stats0"] table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+  margin: 8px 0 12px 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 2. Strip all cell backgrounds and pill borders */
+.atlas-statblock [data-block-id="c5stats0"] :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] :is(th, td) {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 4px 2px !important;
+  text-align: center !important;
+}
+
+/* 3. Header Row: STR, DEX, CON, INT, WIS, CHA */
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td) {
+  color: var(--sb-crimson, #8b151b) !important;
+  font-family: "Cinzel", "Modesto Condensed", "Georgia", serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid var(--sb-copper-mid, #b86527) !important;
+  padding-bottom: 4px !important;
+}
+
+/* Top-left blank cell */
+.atlas-statblock [data-block-id="c5stats0"] thead tr > :first-child {
+  border-bottom: 2px solid transparent !important;
+  visibility: hidden !important;
+}
+
+/* 4. Side Row Labels: SCORE, MOD, SAVE */
+.atlas-statblock [data-block-id="c5stats0"] tbody :is(th, td:first-child) {
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--sb-copper-dark, #6e350e) !important;
+  text-align: right !important;
+  padding-right: 8px !important;
+  white-space: nowrap !important;
+  opacity: 0.85 !important;
+}
+
+/* Insert "Score" label for the base score row */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before {
+  content: "Score" !important;
+}
+
+/* 5. Base Score Row (Subdued text) */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child) {
+  color: var(--text-muted, #543f2f) !important;
+  font-size: 0.82rem !important;
+  padding-top: 6px !important;
+}
+
+/* 6. Mod & Save Values */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child) {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+/* 7. Rollable Underlines */
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link {
+  color: var(--sb-crimson, #8b151b) !important;
+  font-weight: 700 !important;
+  border-bottom: 1.5px solid rgba(184, 101, 39, 0.45) !important;
+  padding: 0 1px !important;
+  display: inline-block !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link:hover {
+  color: var(--sb-crimson-bright, #b81d24) !important;
+  border-bottom-color: var(--sb-crimson-bright, #b81d24) !important;
+}
+/* Ensure all row label cells (SCORE, MOD, SAVE) and their children are fully transparent */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child *,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

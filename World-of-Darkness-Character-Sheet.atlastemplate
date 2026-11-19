@@ -1,0 +1,1771 @@
+{
+  "format": "atlas-statblock-template",
+  "version": 1,
+  "id": "wod-5e-character-sheet-123hk1",
+  "description": "World of Darkness 5th Edition Universal Character Sheet with 3x3 Arena x Approach Attribute Table, dynamic splat switching, system-dependent Health/Willpower, and clickable 5-dot pip counters.",
+  "diceSetId": "builtin:d10",
+  "source": {
+    "system": "World of Darkness 5e",
+    "label": "WoD5 Universal · Homebrew",
+    "licences": [
+      "CC-BY-4.0"
+    ],
+    "attribution": "Adapted from World of Darkness 5th Edition (V5, W5, H5, Dhampir) character sheets for Atlas VTT.",
+    "modification": "Universal dynamic splat template with 3x3 Arena x Approach scores table, clean single-line headers, and clickable pip ratings."
+  },
+  "fields": [
+    {
+      "key": "name",
+      "label": "Character Name",
+      "type": "text"
+    },
+    {
+      "key": "image",
+      "label": "Portrait",
+      "type": "image"
+    },
+    {
+      "key": "splat",
+      "label": "Game Line",
+      "type": "choice",
+      "meaning": "creature-type",
+      "options": [
+        "Vampire",
+        "Werewolf",
+        "Hunter",
+        "Dhampir",
+        "Mage",
+        "Wraith",
+        "Changeling",
+        "Demon",
+        "Mummy"
+      ],
+      "open": false
+    },
+    {
+      "key": "concept",
+      "label": "Concept",
+      "type": "text"
+    },
+    {
+      "key": "chronicle",
+      "label": "Chronicle",
+      "type": "text"
+    },
+    {
+      "key": "ambition",
+      "label": "Ambition",
+      "type": "text"
+    },
+    {
+      "key": "desire",
+      "label": "Desire",
+      "type": "text"
+    },
+    {
+      "key": "clan",
+      "label": "Clan",
+      "type": "text"
+    },
+    {
+      "key": "sire",
+      "label": "Sire",
+      "type": "text"
+    },
+    {
+      "key": "generation",
+      "label": "Generation",
+      "type": "text"
+    },
+    {
+      "key": "predator_type",
+      "label": "Predator Type",
+      "type": "text"
+    },
+    {
+      "key": "resonance",
+      "label": "Resonance",
+      "type": "text"
+    },
+    {
+      "key": "clan_compulsion",
+      "label": "Clan Compulsion",
+      "type": "text"
+    },
+    {
+      "key": "auspice",
+      "label": "Auspice",
+      "type": "choice",
+      "options": [
+        "Ragabash",
+        "Theurge",
+        "Philodox",
+        "Galliard",
+        "Ahroun"
+      ],
+      "open": true
+    },
+    {
+      "key": "tribe",
+      "label": "Tribe",
+      "type": "text"
+    },
+    {
+      "key": "pack",
+      "label": "Pack",
+      "type": "text"
+    },
+    {
+      "key": "patron",
+      "label": "Patron Spirit",
+      "type": "text"
+    },
+    {
+      "key": "favors_bans",
+      "label": "Favors & Bans",
+      "type": "text"
+    },
+    {
+      "key": "creed",
+      "label": "Creed",
+      "type": "choice",
+      "options": [
+        "Entrepreneurial",
+        "Faithful",
+        "Inquisitive",
+        "Martial",
+        "Underground"
+      ],
+      "open": true
+    },
+    {
+      "key": "creed_field",
+      "label": "Creed Field",
+      "type": "text"
+    },
+    {
+      "key": "drive",
+      "label": "Drive",
+      "type": "text"
+    },
+    {
+      "key": "redemption",
+      "label": "Redemption",
+      "type": "text"
+    },
+    {
+      "key": "cell",
+      "label": "Cell",
+      "type": "text"
+    },
+    {
+      "key": "profession",
+      "label": "Profession",
+      "type": "text"
+    },
+    {
+      "key": "affiliation",
+      "label": "Affiliation",
+      "type": "choice",
+      "options": [
+        "Traditions",
+        "Technocracy",
+        "Disparate Alliance",
+        "Nephandi",
+        "Marauder"
+      ],
+      "open": true
+    },
+    {
+      "key": "faction",
+      "label": "Tradition / Faction",
+      "type": "text"
+    },
+    {
+      "key": "essence",
+      "label": "Essence",
+      "type": "choice",
+      "options": [
+        "Dynamic",
+        "Pattern",
+        "Primordial",
+        "Questing"
+      ],
+      "open": true
+    },
+    {
+      "key": "paradigm",
+      "label": "Paradigm & Focus",
+      "type": "text"
+    },
+    {
+      "key": "guild",
+      "label": "Guild / Legion",
+      "type": "text"
+    },
+    {
+      "key": "shadow_archetype",
+      "label": "Shadow Archetype",
+      "type": "text"
+    },
+    {
+      "key": "regret",
+      "label": "Death & Regret",
+      "type": "text"
+    },
+    {
+      "key": "kith",
+      "label": "Kith",
+      "type": "text"
+    },
+    {
+      "key": "seeming",
+      "label": "Seeming",
+      "type": "choice",
+      "options": [
+        "Childling",
+        "Wilder",
+        "Grump"
+      ],
+      "open": true
+    },
+    {
+      "key": "court",
+      "label": "Court",
+      "type": "choice",
+      "options": [
+        "Seelie",
+        "Unseelie",
+        "Shadow Court"
+      ],
+      "open": true
+    },
+    {
+      "key": "house",
+      "label": "House",
+      "type": "text"
+    },
+    {
+      "key": "visage",
+      "label": "Apocalyptic Visage",
+      "type": "text"
+    },
+    {
+      "key": "dynasty",
+      "label": "Guild / Dynasty",
+      "type": "text"
+    },
+    {
+      "key": "decree",
+      "label": "Decree (Balance)",
+      "type": "choice",
+      "options": [
+        "Heart (Ab)",
+        "Spirit (Ba)",
+        "Essence (Ka)",
+        "Name (Ren)",
+        "Shadow (Sheut)"
+      ],
+      "open": true
+    },
+    {
+      "key": "judge",
+      "label": "Judge of Ma'at",
+      "type": "text"
+    },
+    {
+      "key": "stats",
+      "label": "Attributes (Arena × Approach)",
+      "type": "scores",
+      "slots": [
+        "Force",
+        "Finesse",
+        "Resilience"
+      ],
+      "rows": [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ],
+      "addRows": false,
+      "addColumns": false
+    },
+    {
+      "key": "health",
+      "label": "Max Health",
+      "type": "number",
+      "meaning": "hit-points",
+      "fallback": "{=stats.2 + 3}"
+    },
+    {
+      "key": "willpower",
+      "label": "Max Willpower",
+      "type": "number",
+      "fallback": "{=stats.5 + stats.8}"
+    },
+    {
+      "key": "core_trackers",
+      "label": "Health & Willpower Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Health", "max": 10 },
+        { "name": "Willpower", "max": 10 }
+      ]
+    },
+    {
+      "key": "vampire_trackers",
+      "label": "Vampire Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Hunger", "max": 5 },
+        { "name": "Humanity", "max": 10 },
+        { "name": "Blood Potency", "max": 10 }
+      ]
+    },
+    {
+      "key": "blood_surge",
+      "label": "Blood Surge",
+      "type": "text"
+    },
+    {
+      "key": "mend_amount",
+      "label": "Mend Amount",
+      "type": "text"
+    },
+    {
+      "key": "power_bonus",
+      "label": "Power Bonus",
+      "type": "text"
+    },
+    {
+      "key": "rouse_reroll",
+      "label": "Rouse Re-Roll",
+      "type": "text"
+    },
+    {
+      "key": "feeding_penalty",
+      "label": "Feeding Penalty",
+      "type": "text"
+    },
+    {
+      "key": "bane_severity",
+      "label": "Bane Severity",
+      "type": "text"
+    },
+    {
+      "key": "werewolf_trackers",
+      "label": "Garou Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Rage", "max": 5 },
+        { "name": "Crinos Health (+4)", "max": 4 },
+        { "name": "Glory (Renown)", "max": 5 },
+        { "name": "Honor (Renown)", "max": 5 },
+        { "name": "Wisdom (Renown)", "max": 5 },
+        { "name": "Harano (Gloom)", "max": 5 },
+        { "name": "Hauglosk (Zeal)", "max": 5 }
+      ]
+    },
+    {
+      "key": "active_form",
+      "label": "Active Form",
+      "type": "choice",
+      "options": [
+        "Homid (Free · Human Baseline)",
+        "Glabro (1 Rage · +2 Phys / -2 Soc)",
+        "Crinos (2 Rage · +4 Phys / +4 HP / Claws +3)",
+        "Hispo (1 Rage · +2 Phys / -2 Stealth / Bite +1 Agg)",
+        "Lupus (Free · Wolf Baseline)"
+      ],
+      "open": false
+    },
+    {
+      "key": "hunter_trackers",
+      "label": "Hunter Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Desperation", "max": 5 },
+        { "name": "Danger", "max": 5 },
+        { "name": "Despair", "max": 1 }
+      ]
+    },
+    {
+      "key": "dhampir_trackers",
+      "label": "Dhampir Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Bloodright", "max": 5 },
+        { "name": "Hunger", "max": 5 },
+        { "name": "Desperation", "max": 5 },
+        { "name": "Danger", "max": 5 },
+        { "name": "Despair", "max": 1 }
+      ]
+    },
+    {
+      "key": "mage_trackers",
+      "label": "Awakened Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Arete", "max": 10 },
+        { "name": "Quintessence", "max": 10 },
+        { "name": "Paradox", "max": 10 }
+      ]
+    },
+    {
+      "key": "wraith_trackers",
+      "label": "Underworld Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Corpus", "max": 10 },
+        { "name": "Pathos", "max": 10 },
+        { "name": "Shadow Angst", "max": 10 }
+      ]
+    },
+    {
+      "key": "changeling_trackers",
+      "label": "Dreaming Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Glamour", "max": 10 },
+        { "name": "Banality", "max": 10 },
+        { "name": "Nightmare", "max": 5 }
+      ]
+    },
+    {
+      "key": "demon_trackers",
+      "label": "Fallen Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Faith Potential", "max": 10 },
+        { "name": "Faith Pool", "max": 10 },
+        { "name": "Permanent Torment", "max": 10 },
+        { "name": "Temporary Torment", "max": 10 }
+      ]
+    },
+    {
+      "key": "mummy_trackers",
+      "label": "Undying Trackers",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Sekhem", "max": 10 },
+        { "name": "Memory (Ma'at)", "max": 10 },
+        { "name": "Ba / Ka Vessels", "max": 5 }
+      ]
+    },
+    {
+      "key": "physical_skills",
+      "label": "Physical Skills",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Athletics", "max": 5 },
+        { "name": "Brawl", "max": 5 },
+        { "name": "Craft", "max": 5 },
+        { "name": "Drive", "max": 5 },
+        { "name": "Firearms", "max": 5 },
+        { "name": "Larceny", "max": 5 },
+        { "name": "Melee", "max": 5 },
+        { "name": "Stealth", "max": 5 },
+        { "name": "Survival", "max": 5 }
+      ]
+    },
+    {
+      "key": "social_skills",
+      "label": "Social Skills",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Animal Ken", "max": 5 },
+        { "name": "Etiquette", "max": 5 },
+        { "name": "Insight", "max": 5 },
+        { "name": "Intimidation", "max": 5 },
+        { "name": "Leadership", "max": 5 },
+        { "name": "Performance", "max": 5 },
+        { "name": "Persuasion", "max": 5 },
+        { "name": "Streetwise", "max": 5 },
+        { "name": "Subterfuge", "max": 5 }
+      ]
+    },
+    {
+      "key": "mental_skills",
+      "label": "Mental Skills",
+      "type": "counters",
+      "counterRows": [
+        { "name": "Academics", "max": 5 },
+        { "name": "Awareness", "max": 5 },
+        { "name": "Finance", "max": 5 },
+        { "name": "Investigation", "max": 5 },
+        { "name": "Medicine", "max": 5 },
+        { "name": "Occult", "max": 5 },
+        { "name": "Politics", "max": 5 },
+        { "name": "Science", "max": 5 },
+        { "name": "Technology", "max": 5 }
+      ]
+    },
+    {
+      "key": "specialties",
+      "label": "Skill Specialties",
+      "type": "pairs"
+    },
+    {
+      "key": "disciplines_dots",
+      "label": "Discipline Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "disciplines",
+      "label": "Discipline Powers & Rituals",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" },
+          { "key": "cost", "label": "Cost", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "gifts_dots",
+      "label": "Gift & Rite Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "gifts_rites",
+      "label": "Gifts, Rites & Talens",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "renown", "label": "Renown", "type": "text" },
+          { "key": "pool", "label": "Pool", "type": "dice" },
+          { "key": "cost", "label": "Cost", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "garou_forms",
+      "label": "Shapeshifting Forms",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "cost", "label": "Cost", "type": "text" },
+          { "key": "bonus", "label": "Modifiers", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "edges_dots",
+      "label": "Edge Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "edges_perks",
+      "label": "Edges & Perks",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "type", "label": "Type", "type": "text" },
+          { "key": "pool", "label": "Pool", "type": "dice" }
+        ]
+      }
+    },
+    {
+      "key": "spheres_dots",
+      "label": "Sphere Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "spheres_rotes",
+      "label": "Rotes & Effects",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" }
+        ]
+      }
+    },
+    {
+      "key": "arcanoi_dots",
+      "label": "Arcanoi & Fetter Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "arcanoi_fetters",
+      "label": "Arcanoi, Fetters & Passions",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" },
+          { "key": "cost", "label": "Cost", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "arts_dots",
+      "label": "Art & Realm Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "arts_realms",
+      "label": "Cantrips & Treasures",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" }
+        ]
+      }
+    },
+    {
+      "key": "lores_dots",
+      "label": "Lore Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "lores_visage",
+      "label": "Evocations & Apocalyptic Form",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" }
+        ]
+      }
+    },
+    {
+      "key": "utterances_dots",
+      "label": "Pillar Ratings",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "utterances_hekau",
+      "label": "Utterances & Affinities",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "cost", "label": "Cost", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "backgrounds_dots",
+      "label": "Backgrounds",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "merits_dots",
+      "label": "Merits",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "flaws_dots",
+      "label": "Flaws",
+      "type": "counters",
+      "counterRows": []
+    },
+    {
+      "key": "advantages_notes",
+      "label": "Advantage Details & Safe House",
+      "type": "entries"
+    },
+    {
+      "key": "weapons",
+      "label": "Weapons & Attacks",
+      "type": "entries",
+      "entry": {
+        "extras": [
+          { "key": "pool", "label": "Pool", "type": "dice" },
+          { "key": "damage", "label": "Damage", "type": "text" }
+        ]
+      }
+    },
+    {
+      "key": "equipment",
+      "label": "Possessions & Gear",
+      "type": "entries"
+    },
+    {
+      "key": "touchstones",
+      "label": "Touchstones & Convictions",
+      "type": "entries"
+    },
+    {
+      "key": "chronicle_tenets",
+      "label": "Chronicle Tenets",
+      "type": "entries"
+    },
+    {
+      "key": "xp_total",
+      "label": "Total XP",
+      "type": "number"
+    },
+    {
+      "key": "xp_spent",
+      "label": "Spent XP",
+      "type": "number"
+    },
+    {
+      "key": "age",
+      "label": "Age",
+      "type": "text"
+    },
+    {
+      "key": "apparent_age",
+      "label": "Apparent Age",
+      "type": "text"
+    },
+    {
+      "key": "dob",
+      "label": "Date of Birth",
+      "type": "text"
+    },
+    {
+      "key": "appearance",
+      "label": "Appearance & Features",
+      "type": "text"
+    },
+    {
+      "key": "notes_2",
+      "label": "History & Notes",
+      "type": "markdown"
+    }
+  ],
+  "header": {
+    "hidden": [
+      "level"
+    ]
+  },
+  "layout": {
+    "maxColumns": 2,
+    "columnWidth": 22,
+    "blocks": [
+      {
+        "id": "wdline01",
+        "type": "line",
+        "fields": [
+          "splat",
+          "concept",
+          "chronicle"
+        ],
+        "pattern": "{splat}[ · {concept}][ ({chronicle})]"
+      },
+      {
+        "id": "wdrow001",
+        "type": "row",
+        "align": "start",
+        "blocks": [
+          {
+            "id": "wdsplat0",
+            "type": "stat",
+            "field": "splat",
+            "label": "Game Line",
+            "look": "run-in"
+          },
+          {
+            "id": "wdchron0",
+            "type": "stat",
+            "field": "chronicle",
+            "look": "run-in"
+          }
+        ]
+      },
+      {
+        "id": "wdambit0",
+        "type": "stat",
+        "field": "ambition",
+        "look": "run-in"
+      },
+      {
+        "id": "wddesir0",
+        "type": "stat",
+        "field": "desire",
+        "look": "run-in"
+      },
+
+      {
+        "id": "wdvmeta0",
+        "type": "section",
+        "heading": "Kindred Lineage",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Vampire"
+        },
+        "blocks": [
+          {
+            "id": "wdvrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdvclan0", "type": "stat", "field": "clan", "look": "run-in" },
+              { "id": "wdvsire0", "type": "stat", "field": "sire", "look": "run-in" },
+              { "id": "wdvgen00", "type": "stat", "field": "generation", "look": "run-in" }
+            ]
+          },
+          {
+            "id": "wdvrow02",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdvpred0", "type": "stat", "field": "predator_type", "look": "run-in" },
+              { "id": "wdvreso0", "type": "stat", "field": "resonance", "look": "run-in" },
+              { "id": "wdvcomp0", "type": "stat", "field": "clan_compulsion", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdwmeta0",
+        "type": "section",
+        "heading": "Garou Identity",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Werewolf"
+        },
+        "blocks": [
+          {
+            "id": "wdwrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdwausp0", "type": "stat", "field": "auspice", "look": "run-in" },
+              { "id": "wdwtrib0", "type": "stat", "field": "tribe", "look": "run-in" },
+              { "id": "wdwpack0", "type": "stat", "field": "pack", "look": "run-in" },
+              { "id": "wdwpatr0", "type": "stat", "field": "patron", "look": "run-in" }
+            ]
+          },
+          {
+            "id": "wdwban00",
+            "type": "stat",
+            "field": "favors_bans",
+            "look": "run-in"
+          },
+          {
+            "id": "wdwform0",
+            "type": "stat",
+            "field": "active_form",
+            "look": "run-in"
+          }
+        ]
+      },
+
+      {
+        "id": "wdhmeta0",
+        "type": "section",
+        "heading": "Hunter Cell & Creed",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Hunter"
+        },
+        "blocks": [
+          {
+            "id": "wdhrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdhcree0", "type": "stat", "field": "creed", "look": "run-in" },
+              { "id": "wdhcfld0", "type": "stat", "field": "creed_field", "look": "run-in" },
+              { "id": "wdhdriv0", "type": "stat", "field": "drive", "look": "run-in" }
+            ]
+          },
+          {
+            "id": "wdhrow02",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdhcell0", "type": "stat", "field": "cell", "look": "run-in" },
+              { "id": "wdhprof0", "type": "stat", "field": "profession", "look": "run-in" },
+              { "id": "wdhrede0", "type": "stat", "field": "redemption", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wddmeta0",
+        "type": "section",
+        "heading": "Dhampir Heritage & Drive",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Dhampir"
+        },
+        "blocks": [
+          {
+            "id": "wddrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wddclan0", "type": "stat", "field": "clan", "look": "run-in" },
+              { "id": "wddcree0", "type": "stat", "field": "creed", "look": "run-in" },
+              { "id": "wdddriv0", "type": "stat", "field": "drive", "look": "run-in" }
+            ]
+          },
+          {
+            "id": "wddrow02",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wddpred0", "type": "stat", "field": "predator_type", "look": "run-in" },
+              { "id": "wddrede0", "type": "stat", "field": "redemption", "look": "run-in" },
+              { "id": "wddcomp0", "type": "stat", "field": "clan_compulsion", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdmmeta0",
+        "type": "section",
+        "heading": "Awakened Tradition & Paradigm",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mage"
+        },
+        "blocks": [
+          {
+            "id": "wdmrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdmaffi0", "type": "stat", "field": "affiliation", "look": "run-in" },
+              { "id": "wdmfact0", "type": "stat", "field": "faction", "look": "run-in" },
+              { "id": "wdmesse0", "type": "stat", "field": "essence", "look": "run-in" }
+            ]
+          },
+          { "id": "wdmpara0", "type": "stat", "field": "paradigm", "look": "run-in" }
+        ]
+      },
+
+      {
+        "id": "wdrmeta0",
+        "type": "section",
+        "heading": "Restless Dead & Shadow",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Wraith"
+        },
+        "blocks": [
+          {
+            "id": "wdrrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdrguil0", "type": "stat", "field": "guild", "look": "run-in" },
+              { "id": "wdrshad0", "type": "stat", "field": "shadow_archetype", "look": "run-in" }
+            ]
+          },
+          { "id": "wdrregr0", "type": "stat", "field": "regret", "look": "run-in" }
+        ]
+      },
+
+      {
+        "id": "wdcmeta0",
+        "type": "section",
+        "heading": "Kithain Seeming & Court",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Changeling"
+        },
+        "blocks": [
+          {
+            "id": "wdcrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdckith0", "type": "stat", "field": "kith", "look": "run-in" },
+              { "id": "wdcseem0", "type": "stat", "field": "seeming", "look": "run-in" },
+              { "id": "wdccour0", "type": "stat", "field": "court", "look": "run-in" },
+              { "id": "wdchous0", "type": "stat", "field": "house", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdfmeta0",
+        "type": "section",
+        "heading": "Fallen House & Visage",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Demon"
+        },
+        "blocks": [
+          {
+            "id": "wdfrow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdfhous0", "type": "stat", "field": "house", "look": "run-in" },
+              { "id": "wdffact0", "type": "stat", "field": "faction", "look": "run-in" },
+              { "id": "wdfvisa0", "type": "stat", "field": "visage", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdumeta0",
+        "type": "section",
+        "heading": "Arisen Dynasty & Decree",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mummy"
+        },
+        "blocks": [
+          {
+            "id": "wdurow01",
+            "type": "row",
+            "align": "start",
+            "blocks": [
+              { "id": "wdudyna0", "type": "stat", "field": "dynasty", "look": "run-in" },
+              { "id": "wdudecr0", "type": "stat", "field": "decree", "look": "run-in" },
+              { "id": "wdujudg0", "type": "stat", "field": "judge", "look": "run-in" }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wddiv001",
+        "type": "divider"
+      },
+
+      {
+        "id": "wdvitl00",
+        "type": "row",
+        "align": "start",
+        "blocks": [
+          {
+            "id": "wdhpcalc",
+            "type": "stat",
+            "field": "health",
+            "label": "Health (Stamina + 3)",
+            "look": "run-in",
+            "whenEmpty": "fallback",
+            "fallback": "{=stats.2 + 3}"
+          },
+          {
+            "id": "wdwpcalc",
+            "type": "stat",
+            "field": "willpower",
+            "label": "Willpower (Comp + Res)",
+            "look": "run-in",
+            "whenEmpty": "fallback",
+            "fallback": "{=stats.5 + stats.8}"
+          }
+        ]
+      },
+
+      {
+        "id": "wdcoret0",
+        "type": "counters",
+        "field": "core_trackers",
+        "label": "Damage & Willpower Boxes"
+      },
+
+      {
+        "id": "wdvtrks0",
+        "type": "section",
+        "heading": "Hunger, Humanity & Blood Potency",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Vampire"
+        },
+        "blocks": [
+          {
+            "id": "wdvtrkc0",
+            "type": "counters",
+            "field": "vampire_trackers",
+            "label": "Vampiric Trackers"
+          },
+          {
+            "id": "wdvbpm01",
+            "type": "metric",
+            "heading": "Blood Potency Modifiers",
+            "fields": [
+              "blood_surge",
+              "mend_amount",
+              "rouse_reroll",
+              "bane_severity"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdwtrks0",
+        "type": "section",
+        "heading": "Rage, Renown & Imbalance",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Werewolf"
+        },
+        "blocks": [
+          {
+            "id": "wdwtrkc0",
+            "type": "counters",
+            "field": "werewolf_trackers",
+            "label": "Garou Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wdhtrks0",
+        "type": "section",
+        "heading": "Desperation, Danger & Despair",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Hunter"
+        },
+        "blocks": [
+          {
+            "id": "wdhtrkc0",
+            "type": "counters",
+            "field": "hunter_trackers",
+            "label": "Hunter Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wddtrks0",
+        "type": "section",
+        "heading": "Bloodright, Hunger & Desperation",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Dhampir"
+        },
+        "blocks": [
+          {
+            "id": "wddtrkc0",
+            "type": "counters",
+            "field": "dhampir_trackers",
+            "label": "Dhampir Trackers"
+          },
+          {
+            "id": "wddbpm01",
+            "type": "metric",
+            "heading": "Bloodright Modifiers",
+            "fields": [
+              "blood_surge",
+              "mend_amount",
+              "power_bonus",
+              "rouse_reroll"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdmtrks0",
+        "type": "section",
+        "heading": "Arete, Quintessence & Paradox",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mage"
+        },
+        "blocks": [
+          {
+            "id": "wdmtrkc0",
+            "type": "counters",
+            "field": "mage_trackers",
+            "label": "Awakened Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wdrtrks0",
+        "type": "section",
+        "heading": "Corpus, Pathos & Angst",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Wraith"
+        },
+        "blocks": [
+          {
+            "id": "wdrtrkc0",
+            "type": "counters",
+            "field": "wraith_trackers",
+            "label": "Underworld Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wdctrks0",
+        "type": "section",
+        "heading": "Glamour, Banality & Nightmare",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Changeling"
+        },
+        "blocks": [
+          {
+            "id": "wdctrkc0",
+            "type": "counters",
+            "field": "changeling_trackers",
+            "label": "Dreaming Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wdftrks0",
+        "type": "section",
+        "heading": "Faith & Torment",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Demon"
+        },
+        "blocks": [
+          {
+            "id": "wdftrkc0",
+            "type": "counters",
+            "field": "demon_trackers",
+            "label": "Fallen Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wdutrks0",
+        "type": "section",
+        "heading": "Sekhem, Memory & Vessels",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mummy"
+        },
+        "blocks": [
+          {
+            "id": "wdutrkc0",
+            "type": "counters",
+            "field": "mummy_trackers",
+            "label": "Undying Trackers"
+          }
+        ]
+      },
+
+      {
+        "id": "wddiv002",
+        "type": "divider"
+      },
+
+      {
+        "id": "wdattr00",
+        "type": "scores",
+        "field": "stats",
+        "heading": "Attributes (Arena × Approach)",
+        "orientation": "table",
+        "rollable": true
+      },
+
+      {
+        "id": "wddiv003",
+        "type": "divider"
+      },
+
+      {
+        "id": "wdsktab0",
+        "type": "tabs",
+        "heading": "Skills",
+        "blocks": [
+          {
+            "id": "wdskphy0",
+            "type": "section",
+            "heading": "Physical",
+            "blocks": [
+              {
+                "id": "wdskphc0",
+                "type": "counters",
+                "field": "physical_skills",
+                "label": "Physical Skills"
+              }
+            ]
+          },
+          {
+            "id": "wdsksoc0",
+            "type": "section",
+            "heading": "Social",
+            "blocks": [
+              {
+                "id": "wdsksoc1",
+                "type": "counters",
+                "field": "social_skills",
+                "label": "Social Skills"
+              }
+            ]
+          },
+          {
+            "id": "wdskmen0",
+            "type": "section",
+            "heading": "Mental",
+            "blocks": [
+              {
+                "id": "wdskmen1",
+                "type": "counters",
+                "field": "mental_skills",
+                "label": "Mental Skills"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdspec00",
+        "type": "pairs",
+        "field": "specialties",
+        "label": "Skill Specialties (+1 Die)"
+      },
+
+      {
+        "id": "wddiv004",
+        "type": "divider"
+      },
+
+      {
+        "id": "wdvpow00",
+        "type": "section",
+        "heading": "Disciplines & Blood Sorcery",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Vampire"
+        },
+        "blocks": [
+          {
+            "id": "wdvpdot0",
+            "type": "counters",
+            "field": "disciplines_dots",
+            "label": "Discipline Ratings"
+          },
+          {
+            "id": "wdvpow01",
+            "type": "entries",
+            "field": "disciplines",
+            "addLabel": "Add discipline power"
+          }
+        ]
+      },
+
+      {
+        "id": "wdwpow00",
+        "type": "section",
+        "heading": "Gifts, Rites & Shapeshifting Forms",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Werewolf"
+        },
+        "blocks": [
+          {
+            "id": "wdwpdot0",
+            "type": "counters",
+            "field": "gifts_dots",
+            "label": "Gift & Rite Ratings"
+          },
+          {
+            "id": "wdwpow01",
+            "type": "entries",
+            "field": "gifts_rites",
+            "addLabel": "Add gift or rite"
+          },
+          {
+            "id": "wdwfms01",
+            "type": "entries",
+            "field": "garou_forms",
+            "heading": "Forms of the Garou",
+            "addLabel": "Add form"
+          }
+        ]
+      },
+
+      {
+        "id": "wdhpow00",
+        "type": "section",
+        "heading": "Hunter Edges & Perks",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Hunter"
+        },
+        "blocks": [
+          {
+            "id": "wdhpdot0",
+            "type": "counters",
+            "field": "edges_dots",
+            "label": "Edge Ratings"
+          },
+          {
+            "id": "wdhpow01",
+            "type": "entries",
+            "field": "edges_perks",
+            "addLabel": "Add edge or perk"
+          }
+        ]
+      },
+
+      {
+        "id": "wddpow00",
+        "type": "section",
+        "heading": "Dhampir Disciplines, Edges & Perks",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Dhampir"
+        },
+        "blocks": [
+          {
+            "id": "wddpdot0",
+            "type": "counters",
+            "field": "disciplines_dots",
+            "label": "Discipline & Edge Ratings"
+          },
+          {
+            "id": "wddpow01",
+            "type": "entries",
+            "field": "disciplines",
+            "heading": "Disciplines",
+            "addLabel": "Add discipline"
+          },
+          {
+            "id": "wddpow02",
+            "type": "entries",
+            "field": "edges_perks",
+            "heading": "Edges & Perks",
+            "addLabel": "Add edge or perk"
+          }
+        ]
+      },
+
+      {
+        "id": "wdmpow00",
+        "type": "section",
+        "heading": "Spheres & Rotes",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mage"
+        },
+        "blocks": [
+          {
+            "id": "wdmpdot0",
+            "type": "counters",
+            "field": "spheres_dots",
+            "label": "Sphere Ratings"
+          },
+          {
+            "id": "wdmpow01",
+            "type": "entries",
+            "field": "spheres_rotes",
+            "addLabel": "Add rote or effect"
+          }
+        ]
+      },
+
+      {
+        "id": "wdrpow00",
+        "type": "section",
+        "heading": "Arcanoi, Fetters & Passions",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Wraith"
+        },
+        "blocks": [
+          {
+            "id": "wdrpdot0",
+            "type": "counters",
+            "field": "arcanoi_dots",
+            "label": "Arcanoi & Fetter Ratings"
+          },
+          {
+            "id": "wdrpow01",
+            "type": "entries",
+            "field": "arcanoi_fetters",
+            "addLabel": "Add arcanos or fetter"
+          }
+        ]
+      },
+
+      {
+        "id": "wdcpow00",
+        "type": "section",
+        "heading": "Arts, Realms & Cantrips",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Changeling"
+        },
+        "blocks": [
+          {
+            "id": "wdcpdot0",
+            "type": "counters",
+            "field": "arts_dots",
+            "label": "Art & Realm Ratings"
+          },
+          {
+            "id": "wdcpow01",
+            "type": "entries",
+            "field": "arts_realms",
+            "addLabel": "Add cantrip or treasure"
+          }
+        ]
+      },
+
+      {
+        "id": "wdfpow00",
+        "type": "section",
+        "heading": "Lores & Apocalyptic Visage",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Demon"
+        },
+        "blocks": [
+          {
+            "id": "wdfpdot0",
+            "type": "counters",
+            "field": "lores_dots",
+            "label": "Lore Ratings"
+          },
+          {
+            "id": "wdfpow01",
+            "type": "entries",
+            "field": "lores_visage",
+            "addLabel": "Add evocation or trait"
+          }
+        ]
+      },
+
+      {
+        "id": "wdupow00",
+        "type": "section",
+        "heading": "Utterances & Hekau",
+        "showWhen": {
+          "field": "splat",
+          "is": "equal",
+          "value": "Mummy"
+        },
+        "blocks": [
+          {
+            "id": "wdupdot0",
+            "type": "counters",
+            "field": "utterances_dots",
+            "label": "Pillar Ratings"
+          },
+          {
+            "id": "wdupow01",
+            "type": "entries",
+            "field": "utterances_hekau",
+            "addLabel": "Add utterance or affinity"
+          }
+        ]
+      },
+
+      {
+        "id": "wddiv005",
+        "type": "divider"
+      },
+
+      {
+        "id": "wdadvtb0",
+        "type": "tabs",
+        "heading": "Advantages (Backgrounds, Merits & Flaws)",
+        "blocks": [
+          {
+            "id": "wdbksec0",
+            "type": "section",
+            "heading": "Backgrounds",
+            "blocks": [
+              {
+                "id": "wdbkcnt0",
+                "type": "counters",
+                "field": "backgrounds_dots",
+                "label": "Background Dots"
+              }
+            ]
+          },
+          {
+            "id": "wdmrsec0",
+            "type": "section",
+            "heading": "Merits",
+            "blocks": [
+              {
+                "id": "wdmrcnt0",
+                "type": "counters",
+                "field": "merits_dots",
+                "label": "Merit Dots"
+              }
+            ]
+          },
+          {
+            "id": "wdflsec0",
+            "type": "section",
+            "heading": "Flaws",
+            "blocks": [
+              {
+                "id": "wdflcnt0",
+                "type": "counters",
+                "field": "flaws_dots",
+                "label": "Flaw Dots"
+              }
+            ]
+          },
+          {
+            "id": "wdadnot0",
+            "type": "section",
+            "heading": "Details & Safe House",
+            "blocks": [
+              {
+                "id": "wdadent0",
+                "type": "entries",
+                "field": "advantages_notes",
+                "addLabel": "Add advantage detail"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdcmbtb0",
+        "type": "tabs",
+        "heading": "Combat & Possessions",
+        "blocks": [
+          {
+            "id": "wdwpsec0",
+            "type": "section",
+            "heading": "Weapons",
+            "blocks": [
+              {
+                "id": "wdwpent0",
+                "type": "entries",
+                "field": "weapons",
+                "addLabel": "Add weapon"
+              }
+            ]
+          },
+          {
+            "id": "wdeqsec0",
+            "type": "section",
+            "heading": "Gear & Items",
+            "blocks": [
+              {
+                "id": "wdeqent0",
+                "type": "entries",
+                "field": "equipment",
+                "addLabel": "Add gear"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdrptab0",
+        "type": "tabs",
+        "heading": "Chronicle & Anchors",
+        "blocks": [
+          {
+            "id": "wdtchsc0",
+            "type": "section",
+            "heading": "Touchstones",
+            "blocks": [
+              {
+                "id": "wdtchen0",
+                "type": "entries",
+                "field": "touchstones",
+                "addLabel": "Add touchstone or conviction"
+              }
+            ]
+          },
+          {
+            "id": "wdtensc0",
+            "type": "section",
+            "heading": "Tenets",
+            "blocks": [
+              {
+                "id": "wdtenen0",
+                "type": "entries",
+                "field": "chronicle_tenets",
+                "addLabel": "Add chronicle tenet"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "wdxprow0",
+        "type": "row",
+        "align": "start",
+        "blocks": [
+          { "id": "wdxptot0", "type": "stat", "field": "xp_total", "look": "run-in" },
+          { "id": "wdxpspn0", "type": "stat", "field": "xp_spent", "look": "run-in" }
+        ]
+      },
+
+      {
+        "id": "wdbiorw0",
+        "type": "row",
+        "align": "start",
+        "blocks": [
+          { "id": "wdage000", "type": "stat", "field": "age", "look": "run-in" },
+          { "id": "wdapage0", "type": "stat", "field": "apparent_age", "look": "run-in" },
+          { "id": "wddob000", "type": "stat", "field": "dob", "look": "run-in" }
+        ]
+      },
+      {
+        "id": "wdappea0",
+        "type": "stat",
+        "field": "appearance",
+        "look": "run-in"
+      },
+      {
+        "id": "wdnotes0",
+        "type": "text",
+        "field": "notes_2",
+        "heading": "History & Notes"
+      }
+    ]
+  },
+  "sample": {
+    "name": "Valeria \"Gorgon's-Teeth\" Kask",
+    "splat": "Vampire",
+    "concept": "Eco-Saboteur & Urban Tracker",
+    "chronicle": "Beneath the Rust Belt Moon",
+    "ambition": "Shut down Pentex's O'Tolley refinery",
+    "desire": "Track down the Black Spiral scout near the river locks",
+    "clan": "Lasombra",
+    "stats": [
+      [3, 3, 3],
+      [2, 1, 2],
+      [2, 4, 3]
+    ]
+  }
+}

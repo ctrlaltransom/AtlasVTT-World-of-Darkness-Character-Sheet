@@ -1,0 +1,314 @@
+/* ==========================================================================
+   WORLD OF DARKNESS 5E: PRECISION SHEET POLISH & TABLE LAYOUTS
+   Scoped strictly to WoD template block IDs (wd...)
+   ========================================================================== */
+
+/* 1. Single-Line Metadata Rows & Blood Potency Metric Box */
+.atlas-statblock:has([data-block-id="wdattr00"]) [data-block="row"],
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) [data-block="row"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: baseline !important;
+  gap: 4px 16px !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) [data-block="stat"],
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) [data-block="stat"] {
+  white-space: nowrap !important;
+}
+
+/* Keep "1 Superficial" and all Blood Potency / Bloodright metrics on one line */
+.atlas-statblock :is([data-block-id="wdvbpm01"], [data-block-id="wddbpm01"]) *,
+.atlas-sb-pane-card :is([data-block-id="wdvbpm01"], [data-block-id="wddbpm01"]) * {
+  white-space: nowrap !important;
+}
+
+.atlas-statblock :is([data-block-id="wdvbpm01"], [data-block-id="wddbpm01"]) [data-block="metric"] > div:last-child,
+.atlas-sb-pane-card :is([data-block-id="wdvbpm01"], [data-block-id="wddbpm01"]) [data-block="metric"] > div:last-child {
+  font-size: 0.84rem !important;
+}
+
+/* 2. Counter Grids: Target the Direct Parent of .atlas-sb-counter */
+.atlas-statblock:has([data-block-id="wdattr00"]) :has(> .atlas-sb-counter),
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) :has(> .atlas-sb-counter) {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 6px 10px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* Make the section label ("DAMAGE & WILLPOWER BOXES", "PHYSICAL SKILLS", etc.) span full width */
+.atlas-statblock:has([data-block-id="wdattr00"]) :has(> .atlas-sb-counter) > :first-child:not(.atlas-sb-counter),
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) :has(> .atlas-sb-counter) > :first-child:not(.atlas-sb-counter) {
+  grid-column: 1 / -1 !important;
+  margin-bottom: 2px !important;
+}
+
+/* 2-Column Grid for Health/Willpower, Disciplines, Backgrounds, Merits & Flaws */
+.atlas-statblock :is([data-block-id="wdcoret0"], [data-block-id="wdvpdot0"], [data-block-id="wdwpdot0"], [data-block-id="wdhpdot0"], [data-block-id="wddpdot0"], [data-block-id="wdmpdot0"], [data-block-id="wdrpdot0"], [data-block-id="wdcpdot0"], [data-block-id="wdfpdot0"], [data-block-id="wdupdot0"], [data-block-id="wdbkcnt0"], [data-block-id="wdmrcnt0"], [data-block-id="wdflcnt0"]):has(> .atlas-sb-counter),
+.atlas-statblock :is([data-block-id="wdcoret0"], [data-block-id="wdvpdot0"], [data-block-id="wdwpdot0"], [data-block-id="wdhpdot0"], [data-block-id="wddpdot0"], [data-block-id="wdmpdot0"], [data-block-id="wdrpdot0"], [data-block-id="wdcpdot0"], [data-block-id="wdfpdot0"], [data-block-id="wdupdot0"], [data-block-id="wdbkcnt0"], [data-block-id="wdmrcnt0"], [data-block-id="wdflcnt0"]) :has(> .atlas-sb-counter),
+.atlas-sb-pane-card :is([data-block-id="wdcoret0"], [data-block-id="wdvpdot0"], [data-block-id="wdwpdot0"], [data-block-id="wdhpdot0"], [data-block-id="wddpdot0"], [data-block-id="wdmpdot0"], [data-block-id="wdrpdot0"], [data-block-id="wdcpdot0"], [data-block-id="wdfpdot0"], [data-block-id="wdupdot0"], [data-block-id="wdbkcnt0"], [data-block-id="wdmrcnt0"], [data-block-id="wdflcnt0"]):has(> .atlas-sb-counter),
+.atlas-sb-pane-card :is([data-block-id="wdcoret0"], [data-block-id="wdvpdot0"], [data-block-id="wdwpdot0"], [data-block-id="wdhpdot0"], [data-block-id="wddpdot0"], [data-block-id="wdmpdot0"], [data-block-id="wdrpdot0"], [data-block-id="wdcpdot0"], [data-block-id="wdfpdot0"], [data-block-id="wdupdot0"], [data-block-id="wdbkcnt0"], [data-block-id="wdmrcnt0"], [data-block-id="wdflcnt0"]) :has(> .atlas-sb-counter) {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* Individual Counter Cell Styling */
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-counter,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-counter {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 4px !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 5px !important;
+  padding: 5px 8px !important;
+  min-width: 0 !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-counter__name,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-counter__name {
+  font-size: 0.76rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
+/* Keep "- 7 / 10 +" stepper on a single horizontal line (fixes Humanity & Blood Potency wrapping) */
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-counter__stepper,
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-counter__count,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-counter__stepper,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-counter__count {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  white-space: nowrap !important;
+}
+
+/* 3. 3x3 Arena x Approach Attribute Table with Names & Dot Pips */
+.atlas-statblock [data-block-id="wdattr00"] table,
+.atlas-sb-pane-card [data-block-id="wdattr00"] table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+  margin: 6px 0 10px 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] thead tr,
+.atlas-statblock [data-block-id="wdattr00"] tbody tr,
+.atlas-sb-pane-card [data-block-id="wdattr00"] thead tr,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr {
+  display: grid !important;
+  grid-template-columns: 74px repeat(3, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] thead tr::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] thead tr::before {
+  content: "" !important;
+  display: block !important;
+  border-bottom: 2px solid transparent !important;
+  padding-bottom: 4px !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] thead th,
+.atlas-sb-pane-card [data-block-id="wdattr00"] thead th {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid var(--text-accent) !important;
+  color: var(--text-accent) !important;
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  padding: 4px 2px !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08) !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr::before {
+  font-family: "Cinzel", "Georgia", serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  text-align: right !important;
+  padding-right: 10px !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(1)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(1)::before { content: "Physical" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(2)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(2)::before { content: "Social" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(3)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(3)::before { content: "Mental" !important; }
+
+.atlas-statblock [data-block-id="wdattr00"] tbody td,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td {
+  background: transparent !important;
+  border: none !important;
+  padding: 6px 4px 8px 4px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  position: relative !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody td::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td::before {
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  color: var(--text-normal) !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(1)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(1)::before { content: "Strength" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(2)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(2)::before { content: "Dexterity" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(3)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(1) td:nth-child(3)::before { content: "Stamina" !important; }
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(1)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(1)::before { content: "Charisma" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(2)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(2)::before { content: "Manipulation" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(3)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(2) td:nth-child(3)::before { content: "Composure" !important; }
+
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(1)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(1)::before { content: "Intelligence" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(2)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(2)::before { content: "Wits" !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(3)::before,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody tr:nth-child(3) td:nth-child(3)::before { content: "Resolve" !important; }
+
+.atlas-statblock [data-block-id="wdattr00"] tbody td :is(a, button, [data-roll], .atlas-dice-link),
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td :is(a, button, [data-roll], .atlas-dice-link) {
+  display: inline-block !important;
+  position: relative !important;
+  width: 68px !important;
+  height: 12px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  background-repeat: repeat-x !important;
+  background-size: 14px 12px !important;
+  background-position: left center !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12'%3E%3Ccircle cx='6' cy='6' r='4.2' fill='none' stroke='%23888888' stroke-opacity='0.45' stroke-width='1.4'/%3E%3C/svg%3E") !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+  transition: filter 120ms ease !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody td :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td :is(a, button, [data-roll], .atlas-dice-link)::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 12px !important;
+  width: 0px !important;
+  background-color: var(--text-accent) !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12'%3E%3Ccircle cx='6' cy='6' r='4.8' fill='black'/%3E%3C/svg%3E") !important;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12'%3E%3Ccircle cx='6' cy='6' r='4.8' fill='black'/%3E%3C/svg%3E") !important;
+  -webkit-mask-repeat: repeat-x !important;
+  mask-repeat: repeat-x !important;
+  -webkit-mask-size: 14px 12px !important;
+  mask-size: 14px 12px !important;
+  pointer-events: none !important;
+}
+
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="0"], [data-value="0"], [title*="0"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="0"], [data-value="0"], [title*="0"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 0px !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="1"], [data-value="1"], [title*="1"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="1"], [data-value="1"], [title*="1"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 14px !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="2"], [data-value="2"], [title*="2"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="2"], [data-value="2"], [title*="2"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 28px !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="3"], [data-value="3"], [title*="3"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="3"], [data-value="3"], [title*="3"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 42px !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="4"], [data-value="4"], [title*="4"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="4"], [data-value="4"], [title*="4"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 56px !important; }
+.atlas-statblock [data-block-id="wdattr00"] tbody td:has([aria-label*="5"], [data-value="5"], [title*="5"]) :is(a, button, [data-roll], .atlas-dice-link)::after,
+.atlas-sb-pane-card [data-block-id="wdattr00"] tbody td:has([aria-label*="5"], [data-value="5"], [title*="5"]) :is(a, button, [data-roll], .atlas-dice-link)::after { width: 70px !important; }
+
+/* 4. Skill Specialties Pill Tags */
+.atlas-statblock [data-block-id="wdspec00"] > span:not(:first-child),
+.atlas-sb-pane-card [data-block-id="wdspec00"] > span:not(:first-child) {
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  margin: 2px 4px 2px 0 !important;
+  font-size: 0.76rem !important;
+  white-space: nowrap !important;
+}
+
+/* 5. Clean Entry Cards & Pill Badges (.atlas-sb-trait & .atlas-sb-entry-extra) */
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-entries,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-entries {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-trait,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-trait {
+  background: rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 2px solid var(--text-accent) !important;
+  border-radius: 5px !important;
+  padding: 6px 9px !important;
+  line-height: 1.4 !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-entry-extras,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-entry-extras {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px 6px !important;
+  margin: 0 4px !important;
+  vertical-align: baseline !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-entry-extra,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-entry-extra {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 4px !important;
+  padding: 0 5px !important;
+  font-size: 0.76rem !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock:has([data-block-id="wdattr00"]) .atlas-sb-entry-extra-label,
+.atlas-sb-pane-card:has([data-block-id="wdattr00"]) .atlas-sb-entry-extra-label {
+  color: var(--text-accent) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
