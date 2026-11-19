@@ -1,8 +1,3 @@
-/* ==========================================================================
-   STYLE 3: SYLVAN WOODCRAFT (CLEAN FOREST FLOOR & GROUNDED ROOT FOOTER)
-   File: sylvan-woodcraft.theme.css
-   ========================================================================== */
-
 .atlas-statblock,
 .atlas-sb-pane-card,
 .atlas-sb-sheet {
@@ -27,18 +22,25 @@
   --sylvan-leaf-glow: rgba(74, 222, 128, 0.22);
   --sylvan-amber: #e09f3e;
 
-  /* Clean, grounded root & river stone footer bed (anchored strictly to bottom) */
-  --sylvan-footer-bed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 160' preserveAspectRatio='none'%3E%3C!-- Mossy River Stones along Base --%3E%3Cellipse cx='75' cy='148' rx='42' ry='16' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='128' cy='152' rx='28' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='28' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='525' cy='146' rx='44' ry='17' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='472' cy='152' rx='29' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='576' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3C!-- Gnarled Bark Roots --%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M45,132 C82,126 122,136 165,148 C195,156 225,160 255,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M555,130 C518,124 478,134 435,146 C405,154 375,158 345,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+  /* Seamless Organic Bark Grain & Delicate Botanical Leaf Watermark (Tiles cleanly across entire card) */
+--sylvan-canopy-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%234ade80' stroke-opacity='0.11' stroke-width='1.3'%3E%3Cpath d='M0,22 Q65,12 130,22 T260,22'/%3E%3Cpath d='M0,58 Q65,70 130,58 T260,58'/%3E%3Cpath d='M0,98 Q65,86 130,98 T260,98'/%3E%3Cpath d='M0,142 Q65,154 130,142 T260,142'/%3E%3Cpath d='M0,184 Q65,172 130,184 T260,184'/%3E%3Cpath d='M0,226 Q65,238 130,226 T260,226'/%3E%3Cellipse cx='68' cy='78' rx='26' ry='8' transform='rotate(-12 68 78)'/%3E%3Cellipse cx='196' cy='198' rx='30' ry='9' transform='rotate(10 196 198)'/%3E%3C/g%3E%3Cg fill='%234ade80' fill-opacity='0.08'%3E%3Cpath d='M42,36 C54,26 68,36 58,46 C50,46 44,41 42,36 Z'/%3E%3Cpath d='M210,74 C222,64 236,74 226,84 C218,84 212,79 210,74 Z'/%3E%3Cpath d='M124,162 C136,152 150,162 140,172 C132,172 126,167 124,162 Z'/%3E%3Cpath d='M28,212 C40,202 54,212 44,222 C36,222 30,217 28,212 Z'/%3E%3C/g%3E%3C/svg%3E");
+  /* Top-Right & Bottom-Left Corner Botanical Clusters (Fixed pixel size, never stretches) */
+  --sylvan-corner-tr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M132,12 C104,16 82,32 68,56 C56,76 38,88 18,94' fill='none' stroke='%2325442b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M132,12 C104,16 82,32 68,56 C56,76 38,88 18,94' fill='none' stroke='%23488243' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M104,20 C92,8 78,22 90,32 C98,30 102,25 104,20 Z' fill='%23589b4b' fill-opacity='0.75' stroke='%231b341f' stroke-width='1.2'/%3E%3Cpath d='M78,44 C62,36 54,52 68,58 C75,55 77,49 78,44 Z' fill='%236bb55c' fill-opacity='0.7' stroke='%231b341f' stroke-width='1.2'/%3E%3Cpath d='M48,76 C34,68 26,84 40,90 C46,87 48,81 48,76 Z' fill='%23488243' fill-opacity='0.7' stroke='%231b341f' stroke-width='1.2'/%3E%3Ccircle cx='96' cy='46' r='2' fill='%23e09f3e' opacity='0.7'/%3E%3Ccircle cx='62' cy='72' r='1.6' fill='%2386efac' opacity='0.65'/%3E%3C/svg%3E");
+
+  --sylvan-corner-bl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M8,128 C36,124 58,108 72,84 C84,64 102,52 122,46' fill='none' stroke='%2325442b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M8,128 C36,124 58,108 72,84 C84,64 102,52 122,46' fill='none' stroke='%23488243' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M36,120 C48,132 62,118 50,108 C42,110 38,115 36,120 Z' fill='%23589b4b' fill-opacity='0.75' stroke='%231b341f' stroke-width='1.2'/%3E%3Cpath d='M62,96 C78,104 86,88 72,82 C65,85 63,91 62,96 Z' fill='%236bb55c' fill-opacity='0.7' stroke='%231b341f' stroke-width='1.2'/%3E%3Cpath d='M92,64 C106,72 114,56 100,50 C94,53 92,59 92,64 Z' fill='%23488243' fill-opacity='0.7' stroke='%231b341f' stroke-width='1.2'/%3E%3Ccircle cx='44' cy='94' r='2' fill='%23e09f3e' opacity='0.7'/%3E%3Ccircle cx='78' cy='68' r='1.6' fill='%2386efac' opacity='0.65'/%3E%3C/svg%3E");
 
   background-color: var(--sylvan-bg) !important;
   background-image: 
-    var(--sylvan-footer-bed),
-    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='forestGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23forestGrain)' opacity='0.035'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
-  background-repeat: no-repeat, no-repeat, repeat, no-repeat !important;
-  background-position: bottom center, top left, top left, center !important;
-  background-size: 100% 120px, 100% 100%, 200px 200px, 100% 100% !important;
+    var(--sylvan-corner-tr),
+    var(--sylvan-corner-bl),
+    radial-gradient(circle at 12% 8%, rgba(224, 159, 62, 0.12) 0%, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(74, 222, 128, 0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 45%, rgba(74, 222, 128, 0.05) 0%, transparent 65%),
+    var(--sylvan-canopy-tile),
+    linear-gradient(165deg, #1a291f 0%, #131f17 50%, #0e1711 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: top right, bottom left, top left, bottom right, center, top left, center !important;
+  background-size: 130px 130px, 130px 130px, 100% 100%, 100% 100%, 100% 100%, 260px 260px, 100% 100% !important;
 
   color: var(--text-normal) !important;
   border-radius: 8px !important;
@@ -50,8 +52,8 @@
   border: 3px solid var(--sylvan-wood-trim) !important;
   box-shadow: 
     inset 0 0 0 2px var(--sylvan-bg),
-    inset 0 0 0 3px rgba(74, 222, 128, 0.2),
-    inset 0 0 18px rgba(8, 14, 10, 0.65),
+    inset 0 0 0 3px rgba(74, 222, 128, 0.24),
+    inset 0 0 26px rgba(6, 12, 8, 0.75),
     0 10px 28px rgba(0, 0, 0, 0.65) !important;
 }
 
@@ -70,7 +72,7 @@
   display: none !important;
 }
 
-/* Corner Vines */
+/* Corner Vines (Top-Left & Bottom-Right) */
 .atlas-statblock::before,
 .atlas-sb-pane-card::before {
   content: "";
@@ -388,12 +390,15 @@
 .atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
   background-color: var(--sylvan-bg) !important;
   background-image: 
-    var(--sylvan-footer-bed),
-    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
-  background-repeat: no-repeat, no-repeat, no-repeat !important;
-  background-position: bottom center, top left, center !important;
-  background-size: 100% 120px, 100% 100%, 100% 100% !important;
+    var(--sylvan-corner-tr),
+    var(--sylvan-corner-bl),
+    radial-gradient(circle at 12% 8%, rgba(224, 159, 62, 0.12) 0%, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(74, 222, 128, 0.10) 0%, transparent 45%),
+    var(--sylvan-canopy-tile),
+    linear-gradient(165deg, #1a291f 0%, #131f17 50%, #0e1711 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: top right, bottom left, top left, bottom right, top left, center !important;
+  background-size: 110px 110px, 110px 110px, 100% 100%, 100% 100%, 260px 260px, 100% 100% !important;
   color: var(--text-normal) !important;
   --text-normal: #f0ead8 !important;
   --text-muted: #a6b5a7 !important;
@@ -404,7 +409,7 @@
   border: 3px solid var(--sylvan-wood-trim) !important;
   box-shadow: 
     inset 0 0 0 2px var(--sylvan-bg),
-    inset 0 0 0 3px rgba(74, 222, 128, 0.2),
+    inset 0 0 0 3px rgba(74, 222, 128, 0.24),
     0 12px 32px rgba(0, 0, 0, 0.8) !important;
   border-radius: 8px !important;
   overflow: visible !important;
@@ -625,17 +630,17 @@
 .popover.hover-popover {
   background-color: var(--sylvan-bg, #141f17) !important;
   background-image: 
-    var(--sylvan-footer-bed),
-    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
-  background-repeat: no-repeat, no-repeat, no-repeat !important;
-  background-position: bottom center, top left, center !important;
-  background-size: 100% 120px, 100% 100%, 100% 100% !important;
+    radial-gradient(circle at 12% 8%, rgba(224, 159, 62, 0.12) 0%, transparent 48%),
+    var(--sylvan-canopy-tile),
+    linear-gradient(165deg, #1a291f 0%, #131f17 50%, #0e1711 100%) !important;
+  background-repeat: no-repeat, repeat, no-repeat !important;
+  background-position: top left, top left, center !important;
+  background-size: 100% 100%, 260px 260px, 100% 100% !important;
   border: 2px solid var(--sylvan-wood-trim, #785331) !important;
   border-radius: 6px !important;
   box-shadow: 
     inset 0 0 0 1.5px var(--sylvan-bg, #141f17),
-    inset 0 0 0 2.5px rgba(74, 222, 128, 0.2),
+    inset 0 0 0 2.5px rgba(74, 222, 128, 0.24),
     0 12px 30px rgba(0, 0, 0, 0.75) !important;
   color: var(--text-normal, #f0ead8) !important;
   position: absolute !important;
@@ -742,7 +747,7 @@
 }
 
 .atlas-statblock input[type="checkbox"].action-use:after,
-.atlas-sb-pane-card input[type="checkbox"].action-user:after,
+.atlas-sb-pane-card input[type="checkbox"].action-use:after,
 .atlas-sb-sheet input[type="checkbox"].action-use:after {
   display: none !important;
 }
@@ -848,6 +853,7 @@
   border-bottom-color: var(--sylvan-leaf-bright, #86efac) !important;
   text-shadow: 0 0 8px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.5)) !important;
 }
+
 .atlas-statblock [data-block-id="c5stats0"] thead :is(th, td, span, div),
 .atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td, span, div) {
   font-size: 0.62rem !important;
