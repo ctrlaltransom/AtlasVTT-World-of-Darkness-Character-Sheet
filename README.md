@@ -52,6 +52,7 @@ If you use the **[Statblock Template Installer for Atlas](https://community.obsi
 5. To check for updates later, click the **refresh (`↻`)** icon in the plugin's settings tab.
 
 *(Note: If you previously installed files manually under different filenames, delete the old files before running the plugin so you don't end up with duplicates.)*
+*(Note 2: All visual themes from the 5e repository are included here as optional Obsidian CSS snippets. Because the automatic installer writes directly to `.obsidian/snippets/` by filename, installing this repository alongside the 5e repository will safely overwrite matching theme files rather than creating duplicates.)*
 
 ## Manual Downloads
 > **How to download individual files:** Click **View** on any file below and press the **Download raw file** button (the downward arrow icon in the top-right corner of the code box), or right-click **Download** and choose **Save Link As...**. If you want everything at once, grab the ZIP from the [Releases](https://github.com/ctrlaltransom/AtlasVTT-World-of-Darkness-Character-Sheet/releases) page on the right sidebar.
