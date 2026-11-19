@@ -1,0 +1,37 @@
+/* ==========================================================================
+   ATLAS VTT: FORCE TWO-COLUMN LAYOUT ON TOKEN HOVER PREVIEWS
+   File: atlas-token-preview-two-columns.css
+   ========================================================================== */
+
+/* 1. Expand the preview window shell to accommodate two full columns */
+.atlas-statblock-preview-window {
+  width: max-content !important;
+  max-width: 950px !important;
+  min-width: 780px !important;
+}
+
+/* 2. Ensure internal containers don't clamp the horizontal space */
+.atlas-statblock-preview-window .atlas-statblock-body,
+.atlas-statblock-link__preview .atlas-statblock-body {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Force the CSS multi-column wrapper into two columns */
+.atlas-statblock-preview-window .atlas-sb-columns,
+.atlas-statblock-link__preview .atlas-sb-columns {
+  column-count: 2 !important;
+  -webkit-column-count: 2 !important;
+  column-width: 22em !important;
+  column-gap: 1.5em !important;
+  --atlas-sb-max-columns: 2 !important;
+  width: 100% !important;
+}
+
+/* 4. Prevent column break collisions on key card blocks */
+.atlas-statblock-preview-window .atlas-sb-columns > .atlas-sb-item,
+.atlas-statblock-link__preview .atlas-sb-columns > .atlas-sb-item {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
