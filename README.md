@@ -68,7 +68,7 @@ Place inside `<Your Vault>/.obsidian/snippets/` and toggle on in **Settings → 
 
 | Snippet | Purpose | View File | Direct Download |
 | :--- | :--- | :--- | :--- |
-| **WoD5 Sheet Polish** | Adds Arena row labels, attribute names, and clickable 5-dot pip bars to the 3×3 Attribute table, aligns Skills/Trackers, and styles power/weapon cards | [World-of-Darkness-sheet-polish.css](World-of-Darkness-sheet-polish.css) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-World-of-Darkness-Character-Sheet/main/World-of-Darkness-sheet-polish.css) |
+| **WoD5 Sheet Polish** | Adds Arena row labels, attribute names, and clickable 5-dot pip bars to the 3×3 Attribute table, aligns Skills/Trackers, and styles power/weapon cards | [World-of-Darkness-sheet-polish.css](World-of-Darkness-sheet-polish.css) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-World-of-Darkness-Character-Sheet/main/wod-sheet-polish.css) |
 | **Two-Column Hover Preview** | Forces token hover previews in scenes to render in two columns | [two-column-hover.css](two-column-hover.css) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-World-of-Darkness-Character-Sheet/main/two-column-hover.css) |
 
 ### Visual Themes (Optional; enable only one)
