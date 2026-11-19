@@ -52,6 +52,7 @@ If you use the **[Statblock Template Installer for Atlas](https://community.obsi
 5. To check for updates later, click the **refresh (`↻`)** icon in the plugin's settings tab.
 
 *(Note: If you previously installed files manually under different filenames, delete the old files before running the plugin so you don't end up with duplicates.)*
+
 *(Note 2: All visual themes from the 5e repository are included here as optional Obsidian CSS snippets. Because the automatic installer writes directly to `.obsidian/snippets/` by filename, installing this repository alongside the 5e repository will safely overwrite matching theme files rather than creating duplicates.)*
 
 ## Manual Downloads
