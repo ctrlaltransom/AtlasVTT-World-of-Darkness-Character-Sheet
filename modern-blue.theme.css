@@ -881,3 +881,8 @@
   border-bottom-color: var(--sb-blue-bright, #7dd3fc) !important;
   text-shadow: 0 0 8px var(--sb-blue-glow, rgba(56, 189, 248, 0.28)) !important;
 }
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td, span, div),
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td, span, div) {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.02em !important;
+}

@@ -1,0 +1,855 @@
+/* ==========================================================================
+   STYLE 3: SYLVAN WOODCRAFT (CLEAN FOREST FLOOR & GROUNDED ROOT FOOTER)
+   File: sylvan-woodcraft.theme.css
+   ========================================================================== */
+
+.atlas-statblock,
+.atlas-sb-pane-card,
+.atlas-sb-sheet {
+  --text-normal: #f0ead8 !important;
+  --text-muted: #a6b5a7 !important;
+  --text-faint: #6c7e6e !important;
+
+  --text-accent: #4ade80 !important;
+  --text-accent-hover: #86efac !important;
+  --link-color: #4ade80 !important;
+  --link-color-hover: #86efac !important;
+  --link-external-color: #4ade80 !important;
+  --link-external-color-hover: #86efac !important;
+
+  --sylvan-bg: #141f17;
+  --sylvan-bark: #211a14;
+  --sylvan-moss: #1a2a1e;
+  --sylvan-border: #3d5240;
+  --sylvan-wood-trim: #785331;
+  --sylvan-leaf: #4ade80;
+  --sylvan-leaf-bright: #86efac;
+  --sylvan-leaf-glow: rgba(74, 222, 128, 0.22);
+  --sylvan-amber: #e09f3e;
+
+  /* Clean, grounded root & river stone footer bed (anchored strictly to bottom) */
+  --sylvan-footer-bed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 160' preserveAspectRatio='none'%3E%3C!-- Mossy River Stones along Base --%3E%3Cellipse cx='75' cy='148' rx='42' ry='16' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='128' cy='152' rx='28' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='28' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='525' cy='146' rx='44' ry='17' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='472' cy='152' rx='29' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='576' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3C!-- Gnarled Bark Roots --%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M45,132 C82,126 122,136 165,148 C195,156 225,160 255,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M555,130 C518,124 478,134 435,146 C405,154 375,158 345,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+
+  background-color: var(--sylvan-bg) !important;
+  background-image: 
+    var(--sylvan-footer-bed),
+    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='forestGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23forestGrain)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: bottom center, top left, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 200px 200px, 100% 100% !important;
+
+  color: var(--text-normal) !important;
+  border-radius: 8px !important;
+  padding: 18px 20px !important;
+
+  position: relative !important;
+  overflow: visible !important;
+
+  border: 3px solid var(--sylvan-wood-trim) !important;
+  box-shadow: 
+    inset 0 0 0 2px var(--sylvan-bg),
+    inset 0 0 0 3px rgba(74, 222, 128, 0.2),
+    inset 0 0 18px rgba(8, 14, 10, 0.65),
+    0 10px 28px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Fix duplicate border/background when Atlas nests .atlas-sb-sheet or .atlas-sb-pane-card inside .atlas-statblock */
+:is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) :is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::before,
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Corner Vines */
+.atlas-statblock::before,
+.atlas-sb-pane-card::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: -24px;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M8,45 C25,25 55,22 80,36 C100,48 115,35 125,22' fill='none' stroke='%23223f27' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M8,45 C25,25 55,22 80,36 C100,48 115,35 125,22' fill='none' stroke='%23488243' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M35,32 C48,15 62,35 48,45 C40,42 36,36 35,32 Z' fill='%236bb55c' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M18,38 C8,22 24,12 30,24 C28,32 22,36 18,38 Z' fill='%23589b4b' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M68,30 C82,14 96,28 88,40 C78,40 72,34 68,30 Z' fill='%237bc96c' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M98,40 C114,26 126,42 114,54 C104,52 100,46 98,40 Z' fill='%23589b4b' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M28,40 C20,55 35,68 45,56 C44,48 38,44 28,40 Z' fill='%236bb55c' stroke='%231b341f' stroke-width='1.5'/%3E%3C/svg%3E");
+  filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.65));
+}
+
+.atlas-statblock::after,
+.atlas-sb-pane-card::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M10,48 C30,28 60,24 88,38 C108,48 120,38 130,24' fill='none' stroke='%23223f27' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M10,48 C30,28 60,24 88,38 C108,48 120,38 130,24' fill='none' stroke='%23488243' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M38,34 C50,18 66,36 52,48 C44,44 40,38 38,34 Z' fill='%236bb55c' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M74,32 C88,16 102,30 94,42 C84,42 78,36 74,32 Z' fill='%237bc96c' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M104,42 C120,28 132,44 120,56 C110,54 106,48 104,42 Z' fill='%23589b4b' stroke='%231b341f' stroke-width='1.5'/%3E%3Cpath d='M20,42 C10,26 26,14 34,26 C30,34 24,40 20,42 Z' fill='%23589b4b' stroke='%231b341f' stroke-width='1.5'/%3E%3C/svg%3E");
+  filter: drop-shadow(-2px -3px 5px rgba(0, 0, 0, 0.65));
+}
+
+/* Typography & Links */
+.atlas-statblock, .atlas-statblock *,
+.atlas-sb-pane-card, .atlas-sb-pane-card * {
+  color: var(--text-normal);
+  text-shadow: none !important;
+}
+
+.atlas-statblock .atlas-sb-muted,
+.atlas-statblock [data-dim="true"],
+.atlas-statblock .atlas-sb-run-in-label,
+.atlas-sb-pane-card .atlas-sb-muted,
+.atlas-sb-pane-card .atlas-sb-run-in-label {
+  color: var(--text-muted) !important;
+}
+
+.atlas-statblock a,
+.atlas-statblock a.internal-link,
+.atlas-statblock [data-link],
+.atlas-statblock [data-clickable="true"],
+.atlas-sb-pane-card a,
+.atlas-sb-pane-card a.internal-link,
+.atlas-sb-pane-card [data-link],
+.atlas-sb-pane-card [data-clickable="true"] {
+  color: var(--sylvan-leaf) !important;
+  text-decoration-color: rgba(74, 222, 128, 0.4) !important;
+  font-weight: 600;
+  transition: all 120ms ease;
+}
+
+.atlas-statblock a:hover,
+.atlas-sb-pane-card a:hover {
+  color: var(--sylvan-leaf-bright) !important;
+  text-shadow: 0 0 8px var(--sylvan-leaf-glow) !important;
+  text-decoration: underline !important;
+}
+
+.atlas-statblock [data-action^="rest"],
+.atlas-statblock button[data-action],
+.atlas-sb-pane-card [data-action^="rest"],
+.atlas-sb-pane-card button[data-action] {
+  color: var(--sylvan-leaf) !important;
+  font-weight: 600 !important;
+}
+
+/* Headings & Dividers */
+.atlas-statblock .atlas-sb-heading,
+.atlas-statblock .atlas-sb-section-heading,
+.atlas-sb-pane-card .atlas-sb-heading,
+.atlas-sb-pane-card .atlas-sb-section-heading {
+  font-family: "Georgia", "Palatino", serif !important;
+  color: var(--sylvan-amber) !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--sylvan-border) !important;
+  box-shadow: 0 1px 0 rgba(74, 222, 128, 0.12) !important;
+  padding-bottom: 3px !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+.atlas-statblock hr,
+.atlas-statblock [data-block="divider"],
+.atlas-sb-pane-card [data-block="divider"] {
+  border: none !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent 0%, var(--sylvan-wood-trim) 20%, var(--sylvan-leaf) 50%, var(--sylvan-wood-trim) 80%, transparent 100%) !important;
+  margin: 12px 0 !important;
+  opacity: 0.85 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock hr::after,
+.atlas-statblock [data-block="divider"]::after,
+.atlas-sb-pane-card [data-block="divider"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 18px !important;
+  height: 12px !important;
+  transform: translate(-50%, -50%) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M11,9 C8,5 4,4 2,6 C4,9 8,10 11,9 Z' fill='%234ade80' stroke='%23141f17' stroke-width='0.8'/%3E%3Cpath d='M11,9 C14,5 18,4 20,6 C18,9 14,10 11,9 Z' fill='%2386efac' stroke='%23141f17' stroke-width='0.8'/%3E%3Ccircle cx='11' cy='9' r='1.8' fill='%23e09f3e'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.45)) !important;
+  pointer-events: none !important;
+}
+
+/* Metric Boxes */
+.atlas-statblock [data-block="metric"],
+.atlas-sb-pane-card [data-block="metric"] {
+  background: linear-gradient(180deg, rgba(26, 42, 30, 0.94) 0%, rgba(20, 31, 23, 0.9) 100%) !important;
+  border: 1px solid var(--sylvan-border) !important;
+  border-left: 3px solid var(--sylvan-leaf) !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  box-shadow: inset 0 1px 0 rgba(134, 239, 172, 0.08) !important;
+}
+
+/* Ability Scores & Currency Tables */
+.atlas-statblock [data-block="scores"],
+.atlas-sb-pane-card [data-block="scores"] {
+  --table-header-background: transparent !important;
+  --table-header-background-hover: transparent !important;
+  --table-row-background-even: transparent !important;
+  --table-row-background-odd: transparent !important;
+  --table-background: transparent !important;
+  --table-border-color: transparent !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"],
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] {
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] table,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] table {
+  border-collapse: separate !important;
+  border-spacing: 4px !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] th,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
+  background: rgba(26, 42, 30, 0.92) !important;
+  color: var(--sylvan-amber) !important;
+  border: 1px solid var(--sylvan-border) !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block-id="0ghhsttd"] td,
+.atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
+  background: rgba(33, 26, 20, 0.88) !important;
+  color: var(--text-normal) !important;
+  border: 1px solid var(--sylvan-border) !important;
+  border-radius: 4px !important;
+  padding: 5px 6px !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.atlas-statblock [data-block="scores"] tr,
+.atlas-sb-pane-card [data-block="scores"] tr {
+  background: transparent !important;
+}
+
+/* Tabs */
+.atlas-statblock [role="tablist"],
+.atlas-sb-pane-card [role="tablist"] {
+  background: rgba(33, 26, 20, 0.9) !important;
+  border: 1px solid var(--sylvan-wood-trim) !important;
+  border-radius: 5px !important;
+  padding: 2px !important;
+  gap: 2px !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+}
+
+.atlas-statblock [role="tab"],
+.atlas-sb-pane-card [role="tab"] {
+  border-radius: 3px !important;
+  color: var(--text-muted) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  padding: 3px 6px !important;
+  border: 1px solid transparent !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [role="tab"][aria-selected="true"],
+.atlas-sb-pane-card [role="tab"][aria-selected="true"] {
+  background: var(--sylvan-moss) !important;
+  color: var(--sylvan-leaf-bright) !important;
+  border: 1px solid var(--sylvan-leaf) !important;
+  box-shadow: 0 0 6px var(--sylvan-leaf-glow) !important;
+}
+
+/* Counter Pips */
+.atlas-statblock [data-block="counters"] svg,
+.atlas-sb-pane-card [data-block="counters"] svg,
+.atlas-statblock [data-pip] svg,
+.atlas-sb-pane-card [data-pip] svg {
+  fill: var(--sylvan-leaf) !important;
+  stroke: var(--sylvan-leaf-bright) !important;
+  color: var(--sylvan-leaf) !important;
+  filter: drop-shadow(0 0 3px var(--sylvan-leaf-glow)) !important;
+}
+
+.atlas-statblock [data-block="counters"] [data-used="true"] svg,
+.atlas-sb-pane-card [data-block="counters"] [data-used="true"] svg,
+.atlas-statblock [data-pip][data-empty="true"] svg,
+.atlas-sb-pane-card [data-pip][data-empty="true"] svg {
+  fill: transparent !important;
+  stroke: var(--sylvan-border) !important;
+  opacity: 0.4 !important;
+  filter: none !important;
+}
+
+/* Skills & Roll Buttons */
+.atlas-statblock [data-block-id="c5skgrp0"] [data-block="row"],
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] [data-block="row"] {
+  border-bottom: 1px dashed rgba(61, 82, 64, 0.5) !important;
+  padding: 1px 4px !important;
+}
+
+.atlas-statblock [data-block-id^="c5sk"][data-block-id$="p0"],
+.atlas-sb-pane-card [data-block-id^="c5sk"][data-block-id$="p0"] {
+  color: var(--sylvan-leaf) !important;
+}
+
+.atlas-statblock button[class*="roll"],
+.atlas-statblock [data-roll],
+.atlas-sb-pane-card button[class*="roll"],
+.atlas-sb-pane-card [data-roll] {
+  background: rgba(74, 222, 128, 0.12) !important;
+  color: var(--sylvan-leaf) !important;
+  border: 1px solid rgba(74, 222, 128, 0.35) !important;
+  border-radius: 4px !important;
+  padding: 0 4px !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock button[class*="roll"]:hover,
+.atlas-statblock [data-roll]:hover,
+.atlas-sb-pane-card button[class*="roll"]:hover,
+.atlas-sb-pane-card [data-roll]:hover {
+  background: var(--sylvan-leaf) !important;
+  color: #111c14 !important;
+  box-shadow: 0 0 8px var(--sylvan-leaf-glow) !important;
+}
+
+/* Proficiency Toggle Switch */
+.atlas-statblock [data-block-id="c5pb0000"],
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container,
+.atlas-sb-pane-card [data-block-id="c5pb0000"],
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container {
+  --interactive-accent: #4ade80 !important;
+  --interactive-accent-hover: #86efac !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container:has(input:checked),
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container:has(input:checked) {
+  background-color: #4ade80 !important;
+  background: #4ade80 !important;
+  border-color: #86efac !important;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.45) !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container.is-enabled::before {
+  background-color: #4ade80 !important;
+}
+
+.atlas-statblock [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb,
+.atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
+  background-color: #141f17 !important;
+  border: 1px solid #3d5240 !important;
+}
+
+/* ==========================================================================
+   SCENE TOKEN PREVIEW WINDOW FIX
+   ========================================================================== */
+
+.atlas-statblock-preview-window,
+.atlas-statblock-preview-window .atlas-statblock-body,
+.atlas-vtt-plugin .atlas-statblock-link__preview,
+.atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
+  background-color: var(--sylvan-bg) !important;
+  background-image: 
+    var(--sylvan-footer-bed),
+    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat !important;
+  background-position: bottom center, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 100% 100% !important;
+  color: var(--text-normal) !important;
+  --text-normal: #f0ead8 !important;
+  --text-muted: #a6b5a7 !important;
+  --text-faint: #6c7e6e !important;
+}
+
+.atlas-statblock-preview-window {
+  border: 3px solid var(--sylvan-wood-trim) !important;
+  box-shadow: 
+    inset 0 0 0 2px var(--sylvan-bg),
+    inset 0 0 0 3px rgba(74, 222, 128, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.8) !important;
+  border-radius: 8px !important;
+  overflow: visible !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: SYLVAN WOODCRAFT INPUT, DROPDOWN & ENTRY EDITOR THEME
+   ========================================================================== */
+
+/* 1. Dropdown Popup Box & Options */
+.atlas-vtt-plugin .atlas-sb-pane-options {
+    background: var(--sylvan-moss) !important;
+    border: 1px solid var(--sylvan-wood-trim) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option {
+    color: var(--text-normal) !important;
+    background: transparent !important;
+    padding: 4px 8px !important;
+    border-radius: 3px !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option.is-selected {
+    background-color: rgba(74, 222, 128, 0.18) !important;
+    color: var(--sylvan-leaf-bright) !important;
+}
+
+/* 2. Text/Number Inputs, Controls & Contenteditable Fields */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input,
+.atlas-vtt-plugin .atlas-sb-pane-input,
+.atlas-statblock input[type="text"],
+.atlas-statblock input[type="number"],
+.atlas-statblock textarea,
+.atlas-sb-pane-card input[type="text"],
+.atlas-sb-pane-card input[type="number"],
+.atlas-sb-pane-card textarea,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"],
+.atlas-statblock [contenteditable="true"],
+.atlas-sb-pane-card [contenteditable="true"] {
+    background-color: var(--sylvan-bark) !important;
+    background: var(--sylvan-bark) !important;
+    color: var(--text-normal) !important;
+    border: 1px solid var(--sylvan-border) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+/* Freeform note box ("Sap", weapon notes) */
+.atlas-vtt-plugin .atlas-sb-pane-entry__text,
+.atlas-vtt-plugin [contenteditable="plaintext-only"] {
+    padding: 4px 8px !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. Focus State */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-input:focus,
+.atlas-vtt-plugin .atlas-sb-pane-entry__text:focus,
+.atlas-vtt-plugin [contenteditable="plaintext-only"]:focus,
+.atlas-statblock input:focus,
+.atlas-statblock textarea:focus,
+.atlas-sb-pane-card input:focus,
+.atlas-sb-pane-card textarea:focus {
+    background-color: var(--sylvan-moss) !important;
+    background: var(--sylvan-moss) !important;
+    color: #ffffff !important;
+    border-color: var(--sylvan-leaf) !important;
+    outline: 2px solid var(--sylvan-leaf) !important;
+    outline-offset: 1px !important;
+}
+
+/* 4. Extra Labels, Add Entry Buttons & Placeholders */
+.atlas-vtt-plugin .atlas-sb-pane-entry-editor .atlas-sb-entry-extra-label {
+    color: var(--sylvan-amber) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon {
+    color: var(--sylvan-leaf) !important;
+    background: transparent !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-add-entry:hover,
+.atlas-vtt-plugin .atlas-sb-sheet .atlas-sb-add-entry--icon:hover {
+    color: var(--sylvan-leaf-bright) !important;
+    background-color: rgba(74, 222, 128, 0.16) !important;
+}
+
+.atlas-vtt-plugin .atlas-sb-pane-entry__text[data-placeholder]:empty:before,
+.atlas-vtt-plugin .atlas-sb-pane-input::placeholder,
+.atlas-statblock input::placeholder,
+.atlas-statblock textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.65 !important;
+}
+
+/* 5. Suppress Browser Autofill Blue Tint */
+.atlas-vtt-plugin input:-webkit-autofill,
+.atlas-vtt-plugin input:-webkit-autofill:hover, 
+.atlas-vtt-plugin input:-webkit-autofill:focus,
+.atlas-statblock input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-normal) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--sylvan-bark) inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* ==========================================================================
+   RESET COUNTER BUTTON: HOLLOW INTERIOR & LIVING LEAF STROKE
+   ========================================================================== */
+
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset,
+.atlas-statblock button.atlas-sb-counter__reset,
+.atlas-sb-pane-card button.atlas-sb-counter__reset {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2px !important;
+  color: var(--sylvan-leaf, #4ade80) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg {
+  fill: transparent !important;
+  stroke: var(--sylvan-leaf, #4ade80) !important;
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  color: var(--sylvan-leaf, #4ade80) !important;
+  filter: drop-shadow(0 0 3px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.22))) !important;
+  transition: transform 0.15s ease, stroke 0.15s ease, filter 0.15s ease !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset svg :is(path, circle, polygon, polyline) {
+  fill: transparent !important;
+  stroke: var(--sylvan-leaf, #4ade80) !important;
+}
+
+.atlas-statblock button.atlas-sb-counter__reset:hover svg,
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg,
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg,
+.atlas-statblock button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-sb-pane-card button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline),
+.atlas-vtt-plugin .atlas-sb-sheet button.atlas-sb-counter__reset:hover svg :is(path, circle, polygon, polyline) {
+  stroke: var(--sylvan-leaf-bright, #86efac) !important;
+  filter: drop-shadow(0 0 8px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.5))) !important;
+  transform: rotate(-30deg) !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (SYLVAN WOODCRAFT)
+   ========================================================================== */
+.atlas-ctx-menu,
+.atlas-ctx-menu--dropdown,
+.atlas-vtt-plugin .atlas-sb-pane-options,
+.atlas-sb-pane-options {
+  background: #1a2a1e !important;
+  border: 1.5px solid #785331 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75) !important;
+  color: #f0ead8 !important;
+  padding: 4px !important;
+}
+
+.atlas-ctx-item,
+.atlas-vtt-plugin .atlas-sb-pane-option,
+.atlas-sb-pane-option {
+  color: #f0ead8 !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+  padding: 4px 8px !important;
+  transition: background-color 100ms ease, color 100ms ease !important;
+}
+
+.atlas-ctx-item:hover,
+.atlas-ctx-item:focus,
+.atlas-ctx-item[data-highlighted],
+.atlas-vtt-plugin .atlas-sb-pane-option:hover,
+.atlas-vtt-plugin .atlas-sb-pane-option:focus,
+.atlas-sb-pane-option:hover,
+.atlas-sb-pane-option:focus {
+  background-color: rgba(74, 222, 128, 0.18) !important;
+  color: #86efac !important;
+  outline: none !important;
+}
+
+.atlas-ctx-item[data-state="checked"],
+.atlas-ctx-item[aria-checked="true"],
+.atlas-vtt-plugin .atlas-sb-pane-option[aria-selected="true"],
+.atlas-sb-pane-option[aria-selected="true"] {
+  background-color: rgba(74, 222, 128, 0.25) !important;
+  color: #86efac !important;
+  font-weight: 600 !important;
+}
+
+.atlas-ctx-item__check svg {
+  stroke: #4ade80 !important;
+}
+
+.atlas-ctx-separator {
+  background: #3d5240 !important;
+  height: 1px !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: SYLVAN WOODCRAFT LINK HOVER POPOVERS & NATIVE SHEET TABLES
+   ========================================================================== */
+
+.popover.hover-popover {
+  background-color: var(--sylvan-bg, #141f17) !important;
+  background-image: 
+    var(--sylvan-footer-bed),
+    radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat !important;
+  background-position: bottom center, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 100% 100% !important;
+  border: 2px solid var(--sylvan-wood-trim, #785331) !important;
+  border-radius: 6px !important;
+  box-shadow: 
+    inset 0 0 0 1.5px var(--sylvan-bg, #141f17),
+    inset 0 0 0 2.5px rgba(74, 222, 128, 0.2),
+    0 12px 30px rgba(0, 0, 0, 0.75) !important;
+  color: var(--text-normal, #f0ead8) !important;
+  position: absolute !important;
+  overflow: visible !important;
+}
+
+.popover.hover-popover .markdown-preview-view,
+.popover.hover-popover .markdown-embed,
+.popover.hover-popover .markdown-embed-content {
+  background: transparent !important;
+  color: var(--text-normal, #f0ead8) !important;
+}
+
+.popover.hover-popover :is(h1, h2, h3, h4, h5, h6, strong, b) {
+  color: var(--sylvan-amber, #e09f3e) !important;
+}
+
+.popover.hover-popover a.internal-link {
+  color: var(--sylvan-leaf, #4ade80) !important;
+}
+
+.popover.hover-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: -12px !important;
+  width: 50px !important;
+  height: 50px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M8,45 C25,25 55,22 80,36 C100,48 115,35 125,22' fill='none' stroke='%23488243' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M35,32 C48,15 62,35 48,45 C40,42 36,36 35,32 Z' fill='%236bb55c' stroke='%231b341f' stroke-width='2'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+.popover.hover-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  right: -12px !important;
+  width: 50px !important;
+  height: 50px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: rotate(180deg) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cpath d='M8,45 C25,25 55,22 80,36 C100,48 115,35 125,22' fill='none' stroke='%23488243' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M35,32 C48,15 62,35 48,45 C40,42 36,36 35,32 Z' fill='%236bb55c' stroke='%231b341f' stroke-width='2'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(-1px -2px 3px rgba(0, 0, 0, 0.5)) !important;
+}
+
+/* Native Atlas Sheet Tables */
+.atlas-statblock .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
+  background-color: rgba(26, 42, 30, 0.92) !important;
+  color: var(--sylvan-amber, #e09f3e) !important;
+  border-color: var(--sylvan-border, #3d5240) !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
+.atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
+  background-color: rgba(33, 26, 20, 0.88) !important;
+  color: var(--text-normal, #f0ead8) !important;
+  border-color: var(--sylvan-border, #3d5240) !important;
+}
+
+.atlas-sb-sheet-table__handle svg {
+  stroke: var(--sylvan-leaf, #4ade80) !important;
+}
+
+/* ==========================================================================
+   ATLAS VTT: ACTION-USE PIPS & OPEN ABILITY SCORES (SYLVAN WOODCRAFT)
+   ========================================================================== */
+
+/* --- 1. Action-Use Pips (.action-use Checkboxes) --- */
+.atlas-statblock input[type="checkbox"].action-use,
+.atlas-sb-pane-card input[type="checkbox"].action-use,
+.atlas-sb-sheet input[type="checkbox"].action-use {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 3px !important;
+  outline: none !important;
+  cursor: pointer !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  margin: 0 2px !important;
+  background-color: var(--sylvan-bark, #211a14) !important;
+  border: 1.5px solid var(--sylvan-border, #3d5240) !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:checked,
+.atlas-sb-pane-card input[type="checkbox"].action-use:checked,
+.atlas-sb-sheet input[type="checkbox"].action-use:checked {
+  background-color: var(--sylvan-leaf, #4ade80) !important;
+  border-color: #86efac !important;
+  box-shadow: 0 0 6px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.35)) !important;
+}
+
+.atlas-statblock input[type="checkbox"].action-use:after,
+.atlas-sb-pane-card input[type="checkbox"].action-user:after,
+.atlas-sb-sheet input[type="checkbox"].action-use:after {
+  display: none !important;
+}
+
+/* --- 2. Open Ability Scores (Transposed Headers & Clean Rows) --- */
+.atlas-statblock [data-block-id="c5stats0"] table,
+.atlas-sb-pane-card [data-block-id="c5stats0"] table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+  width: 100% !important;
+  table-layout: fixed !important;
+  margin: 8px 0 12px 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] :is(th, td) {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 4px 2px !important;
+  text-align: center !important;
+}
+
+/* Ability Headers (STR, DEX, etc.) */
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td),
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td) {
+  color: var(--sylvan-amber, #e09f3e) !important;
+  font-family: "Georgia", "Palatino", serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-bottom: 2px solid var(--sylvan-border, #3d5240) !important;
+  padding-bottom: 4px !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] thead tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead tr > :first-child {
+  border-bottom: 2px solid transparent !important;
+  visibility: hidden !important;
+}
+
+/* Side Labels (SCORE, MOD, SAVE) */
+.atlas-statblock [data-block-id="c5stats0"] tbody :is(th, td:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody :is(th, td:first-child) {
+  font-family: "Georgia", "Palatino", serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-muted, #a6b5a7) !important;
+  text-align: right !important;
+  padding-right: 8px !important;
+  white-space: nowrap !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child > :first-child:empty::before {
+  content: "Score" !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-statblock [data-block-id="c5stats0"] tbody tr > :first-child *,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child,
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr > :first-child * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Base Scores */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:first-child td:not(:first-child) {
+  color: var(--text-faint, #6c7e6e) !important;
+  font-size: 0.82rem !important;
+  padding-top: 6px !important;
+}
+
+/* Mod & Save Roll Links */
+.atlas-statblock [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child),
+.atlas-sb-pane-card [data-block-id="c5stats0"] tbody tr:not(:first-child) td:not(:first-child) {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link {
+  color: var(--sylvan-leaf, #4ade80) !important;
+  font-weight: 700 !important;
+  border-bottom: 1.5px solid rgba(74, 222, 128, 0.45) !important;
+  padding: 0 1px !important;
+  display: inline-block !important;
+  transition: all 120ms ease !important;
+}
+
+.atlas-statblock [data-block-id="c5stats0"] .atlas-dice-link:hover,
+.atlas-sb-pane-card [data-block-id="c5stats0"] .atlas-dice-link:hover {
+  color: var(--sylvan-leaf-bright, #86efac) !important;
+  border-bottom-color: var(--sylvan-leaf-bright, #86efac) !important;
+  text-shadow: 0 0 8px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.5)) !important;
+}
+.atlas-statblock [data-block-id="c5stats0"] thead :is(th, td, span, div),
+.atlas-sb-pane-card [data-block-id="c5stats0"] thead :is(th, td, span, div) {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.02em !important;
+}
