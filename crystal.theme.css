@@ -216,7 +216,9 @@
    ========================================================================== */
 
 .atlas-statblock [data-block="metric"],
-.atlas-sb-pane-card [data-block="metric"] {
+.atlas-sb-pane-card [data-block="metric"],
+.atlas-statblock [data-block-id="c5scst00"],
+.atlas-sb-pane-card [data-block-id="c5scst00"] {
   background: linear-gradient(
     145deg, 
     rgba(123, 104, 238, 0.16) 0%, 

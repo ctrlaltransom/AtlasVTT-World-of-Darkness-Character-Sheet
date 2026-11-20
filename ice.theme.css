@@ -1,8 +1,3 @@
-/* ==========================================================================
-   STYLE: GLACIAL RIME & PRISMATIC FROST (CRYSTALLINE ICE)
-   File: ice.css
-   ========================================================================== */
-
 /* --- 1. Root Shell, Theme Overrides & Faceted Glacial Frame --- */
 .atlas-statblock,
 .atlas-sb-pane-card,
@@ -220,7 +215,9 @@
    ========================================================================== */
 
 .atlas-statblock [data-block="metric"],
-.atlas-sb-pane-card [data-block="metric"] {
+.atlas-sb-pane-card [data-block="metric"],
+.atlas-statblock [data-block-id="c5scst00"],
+.atlas-sb-pane-card [data-block-id="c5scst00"] {
   background: linear-gradient(
     145deg, 
     rgba(56, 189, 248, 0.16) 0%, 

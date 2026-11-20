@@ -258,7 +258,9 @@
 
 /* Metric Boxes */
 .atlas-statblock [data-block="metric"],
-.atlas-sb-pane-card [data-block="metric"] {
+.atlas-sb-pane-card [data-block="metric"],
+.atlas-statblock [data-block-id="c5scst00"],
+.atlas-sb-pane-card [data-block-id="c5scst00"] {
   background: linear-gradient(180deg, rgba(17, 19, 25, 0.94) 0%, rgba(11, 12, 16, 0.9) 100%) !important;
   border: 1px solid var(--sb-obs-border) !important;
   border-top: 2px solid var(--sb-gold-mid) !important;
